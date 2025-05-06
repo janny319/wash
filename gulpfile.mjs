@@ -40,61 +40,59 @@ const scssOptions = {
   sourceComments: true,
 };
 
-// SCSS 컴파일 함수
+// SCSS → CSS 빌드
 function compileSass() {
   return src(`${PATH.SCSS}/**/*.scss`)
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sassCompiler(scssOptions).on('error', sassCompiler.logError))
     .pipe(sourcemaps.write('./map'))
-    .pipe(dest(PATH.CSS))
+    .pipe(dest(PATH.CSS)) // src/css로 저장
+    .pipe(dest(PATH.dist.CSS)) // dist/css로 복사
     .pipe(browserSync.stream());
 }
 
-// Pug 컴파일 함수
+// Pug → HTML 빌드
 function compilePug() {
   return src(`${PATH.PUG}/**/*.pug`)
     .pipe(plumber())
     .pipe(gulpPug({ pretty: true }))
     .pipe(dest(PATH.HTML))
+    .pipe(dest(PATH.dist.HTML)) // build에도 포함
     .pipe(browserSync.stream());
 }
 
-// 로컬 서버 실행
-function server(done) {
-  browserSync.init({
-    server: { baseDir: ROOT },
-  });
-  done();
-}
+// 정적 리소스 복사
+const copyImages = () => src(`${PATH.IMG}/**/*`).pipe(dest(PATH.dist.IMG));
+const copyHTML = () => src(`${PATH.HTML}/*.html`).pipe(dest(PATH.dist.HTML));
+const copyJS = () => src(`${PATH.JS}/**/*`).pipe(dest(PATH.dist.JS));
+const copyData = () => src(`${PATH.DATA}/**/*`).pipe(dest(PATH.dist.DATA));
+const copyFont = () => src(`${PATH.FONT}/**/*`).pipe(dest(PATH.dist.FONT));
 
-// 개발용 파일 감시
-function watching() {
-  watch(`${PATH.PUG}/**/*.pug`, compilePug);
-  watch(`${PATH.SCSS}/**/*.scss`, compileSass);
-  watch(`${PATH.JS}/**/*.js`).on('change', browserSync.reload);
-}
+// 리소스 통합 복사 task
+const copyAssets = parallel(copyImages, copyHTML, copyJS, copyData, copyFont);
 
 // dist 폴더 정리
 function clean() {
   return deleteAsync([`${DIST}/**`]);
 }
 
-// 리소스 복사 task 정의
-const copyImages = () => src(`${PATH.IMG}/**/*`).pipe(dest(PATH.dist.IMG));
-const copyHTML = () => src(`${PATH.HTML}/*.html`).pipe(dest(PATH.dist.HTML));
-const copyCSS = () => src(`${PATH.CSS}/*.css`).pipe(dest(PATH.dist.CSS));
-const copyJS = () => src(`${PATH.JS}/**/*`).pipe(dest(PATH.dist.JS));
-const copyData = () => src(`${PATH.DATA}/**/*`).pipe(dest(PATH.dist.DATA));
-const copyFont = () => src(`${PATH.FONT}/**/*`).pipe(dest(PATH.dist.FONT));
+// 서버 실행
+function server(done) {
+  browserSync.init({
+    server: { baseDir: ROOT }
+  });
+  done();
+}
 
-// 리소스 빌드 함수
-const copyAssets = parallel(copyImages, copyHTML, copyCSS, copyJS, copyData, copyFont);
+// 파일 감시
+function watching() {
+  watch(`${PATH.SCSS}/**/*.scss`, compileSass);
+  watch(`${PATH.PUG}/**/*.pug`, compilePug);
+  watch(`${PATH.JS}/**/*.js`).on('change', browserSync.reload);
+}
 
-// 배포용 작업
-export const build = series(clean, copyAssets);
-
-// 개발용 작업
+// 개발용 task
 export const dev = series(
   parallel(compileSass, compilePug),
   copyAssets,
@@ -102,5 +100,12 @@ export const dev = series(
   watching
 );
 
-// 기본 작업
+// 배포용 task
+export const build = series(
+  clean,
+  parallel(compileSass, compilePug),
+  copyAssets
+);
+
+// 기본 task
 export default dev;

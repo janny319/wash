@@ -10,7 +10,7 @@
 		"deploy": "gh-pages -d dist -b deploy"
 	},
 	"dependencies": {
-		"gulp": "^5.0.0",
+		"gulp": "^4.0.2",
 		"gulp-autoprefixer": "^9.0.0",
 		"gulp-sourcemaps": "^2.6.5"
 	},
