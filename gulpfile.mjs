@@ -80,7 +80,7 @@ function clean() {
   return deleteAsync([`${DIST}/**`]);
 }
 
-// 리소스 복사 task 정의 (즉시 실행 함수가 아님)
+// 리소스 복사 task 정의
 const copyImages = () => src(`${PATH.IMG}/**/*`).pipe(dest(PATH.dist.IMG));
 const copyHTML = () => src(`${PATH.HTML}/*.html`).pipe(dest(PATH.dist.HTML));
 const copyCSS = () => src(`${PATH.CSS}/*.css`).pipe(dest(PATH.dist.CSS));
@@ -94,3 +94,13 @@ const copyAssets = parallel(copyImages, copyHTML, copyCSS, copyJS, copyData, cop
 // 배포용 작업
 export const build = series(clean, copyAssets);
 
+// 개발용 작업
+export const dev = series(
+  parallel(compileSass, compilePug),
+  copyAssets,
+  server,
+  watching
+);
+
+// 기본 작업
+export default dev;
