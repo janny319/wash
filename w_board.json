@@ -1,0 +1,44 @@
+[
+    {
+        "path": "Guide",
+        "link": "guide",
+        "date": "",
+        "status": "",
+        "remarks": ""
+    },
+    {
+        "path": "main",
+        "link": "main",
+        "date": "",
+        "status": "",
+        "remarks": ""
+    },
+    {
+        "path": "회사소개",
+        "link": "company",
+        "date": "",
+        "status": "",
+        "remarks": ""
+    },
+    {
+        "path": "세탁안내",
+        "link": "info",
+        "date": "",
+        "status": "",
+        "remarks": ""
+    },
+    {
+        "path": "배송안내",
+        "link": "delivery",
+        "date": "",
+        "status": "",
+        "remarks": ""
+    },
+    {
+        "path": "가격안내",
+        "link": "price",
+        "date": "",
+        "status": "",
+        "remarks": ""
+    } 
+]
