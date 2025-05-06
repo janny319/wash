@@ -1,0 +1,77 @@
+.pages {
+  width: 100%;
+}
+.pages__visual {
+  position: relative;
+  height: 50rem;
+  overflow: hidden;
+  background: #81BEF7;
+}
+.pages__visual .img-wrap {
+  width: 50%;
+  height: 50rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.pages__visual .img-wrap > img {
+  width: 100%;
+  height: 100%;
+}
+.pages__visual .img-wrap::after {
+  content: "";
+  width: 50rem;
+  height: 50rem;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(-90deg, rgba(129, 190, 247, 0) 0%, rgb(129, 190, 247) 100%);
+}
+.pages__visual .txt-wrap {
+  position: absolute;
+  top: 42%;
+  left: 10rem;
+  display: flex;
+  align-items: center;
+}
+.pages__visual .txt-wrap h2 {
+  font-size: 12rem;
+  font-weight: 700;
+  color: #08298A;
+  text-align: center;
+}
+.pages__visual .txt-wrap > em {
+  font-size: 3.2rem;
+  line-height: 3.4rem;
+  display: inline-block;
+  color: #08298A;
+}
+.pages__cont {
+  width: 98rem;
+  margin: 0 auto;
+  padding: 12rem 0;
+}
+.pages__cont > strong {
+  font-size: 4rem;
+  color: #333;
+  font-weight: 700;
+  padding-bottom: 2rem;
+  display: inline-block;
+}
+.pages__cont .cont-txt {
+  font-size: 2rem;
+  color: #222;
+  font-weight: 500;
+}
+.pages__cont .cont-txt .point {
+  width: 100%;
+  padding: 4rem;
+}
+.pages__cont .cont-txt .point > li {
+  font-size: 1.8rem;
+}
+.pages__cont .cont-txt .point > li + li {
+  margin-top: 1rem;
+}
+/*# sourceMappingURL=../map/pages/company.css.map */

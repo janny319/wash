@@ -1,0 +1,79 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/variables" as mix;
+
+.prompt{
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0 1rem;
+    &.asterisk{
+        padding-left: 0.9rem;
+        &::before{
+            content: '*';
+            font-size: 1.4rem;
+            color: var.$color-black;
+            position: absolute;
+            top: 0.6rem;
+            left: 0;
+        }
+    }
+    h5{
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+        color: var.$color-black;
+        margin-right: 1.2rem;
+        text-align: left;
+        &:not(:empty){
+            width: auto;
+            min-width: 5.5rem;
+        }
+    }
+    input{
+        flex: 1;
+        width: auto;
+        height: 2.8rem;
+        border-radius: 0.4rem;
+        border: 1px solid var.$color-line_02;
+        background-color: var.$color-white;
+        font-size: 1.4rem;
+        color: var.$color-black;
+        padding: 0 0.8rem;
+        &::placeholder{
+            color: var.$color-text_03;
+        }
+    }
+    select{
+        flex: 1;
+        min-width: 10rem;
+        height: 2.8rem;
+        border-radius: 0.4rem;
+        border: 1px solid var.$color-line_02;
+        font-size: 1.4rem;
+        color: var.$color-black;
+        padding: 0 1rem;
+        background: var.$color-white url('../images/icon/ico_arr_down_gray.svg') 98% 50% / 1.8rem 1.8rem no-repeat;
+    }
+    button{
+        width: auto;
+        height: 2.8rem;
+        font-size: 1.2rem;
+        font-weight: 500;
+        line-height: 1.2rem;
+        background-color: var.$color-black;
+        border-radius: 0.4rem;
+        padding: 0 1.3rem;
+        color: var.$color-white;
+        margin-left: 1.2rem;
+    }
+    & + .prompt{
+        margin-left: 1.8rem;
+    }
+}
+.propt-row{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    & + .propt-row{
+        margin-top: 2rem;
+    }
+}

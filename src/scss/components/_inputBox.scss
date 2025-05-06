@@ -1,0 +1,95 @@
+@use 'abstracts/variables' as var;
+@use 'abstracts/variables' as mix;
+
+.input-box, .input-basic{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    .title{
+        width: auto;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: -0.032rem;
+        margin-bottom: 1.2rem;
+        text-align: left;
+        &.ess{
+            &::after{
+                content: '*';
+                font-size: 1.6rem;
+                font-weight: 500;
+                line-height: normal;
+                letter-spacing: -0.032rem;
+                color: #333;
+            }
+        }
+    }
+    .input-wrap{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex: 1;
+        &__input{
+            width: 100%;
+            border: 1px solid #eee;
+            background-color: var.$color-white;
+            border-radius: 0.8rem;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            &.readonly{
+                background: #F5F5F7;
+            }
+        }
+        input{
+            width: 100%;
+            padding: 1.2rem 2rem;
+            font-size: 1.5rem;
+            color: var.$color-black;
+            &::placeholder{
+                color: #999;
+            }
+            &:read-only{
+                background-color: var.$color-line_03;
+            }
+        }
+        .char-count{
+            font-size: 1.2rem;
+            color: #999;
+            padding-right: 2rem;
+        }
+        .unit{
+            font-size: 1.2rem;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: -0.024rem;
+            color: #999;
+            padding-left: 1rem;
+        }
+        .btn-clear{
+            width: 3rem;
+            height: 3rem;
+            position: relative;
+            &::after{
+                content: '';
+                width: 1.8rem;
+                height: 1.8rem;
+                background: url('../images/icon/ico_input_clear.svg') 0 0 no-repeat;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+    &.row{
+        flex-direction: row;
+        align-items: center;
+        .title{
+            margin-bottom: 0;
+            margin-right: 1.2rem;
+        }
+    }
+}

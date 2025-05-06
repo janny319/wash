@@ -1,0 +1,9 @@
+mixin layerPop({id, imgSrc, className})
+    .modalWrap(id=id class=className)
+        .dimd
+        .layer-pop
+            .layer-pop__cont
+                img(src=imgSrc, alt="팝업 이미지")
+            .layer-pop__btn
+                button.close-day 하루 동안 열지 않기
+                button.close 닫기

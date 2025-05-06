@@ -1,0 +1,8 @@
+mixin textArea({width, height, name, placeholder, maxlength, errMsg, readonly=false})
+    .textarea(style=`width: ${width}`)
+        .text-wrap(style=`height: ${height};`)
+            if readonly
+                textarea(name=`${name}` maxlength=`${maxlength}` placeholder=placeholder readonly)
+            else
+                textarea(name=`${name}` maxlength=`${maxlength}` placeholder=placeholder)
+        span.errMsg= errMsg

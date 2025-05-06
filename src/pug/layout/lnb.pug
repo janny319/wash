@@ -1,0 +1,43 @@
+mixin lnbMenu
+    .lnb-wrap
+        .lnb
+            .lnb-top
+                ul.lnb-top__list
+                    li.lnb-top__item
+                        button 학습분석
+                    li.lnb-top__item
+                        button 학습서랍
+                    li.lnb-top__item
+                        button 단추후기
+                    li.lnb-top__item
+                        button 프로필
+            .lnb-bot
+                ul.lnb-bot__list
+                    li.lnb-bot__item
+                        button.ai-bot
+                        ul.ai-bot__list
+                            li.ai-bot__item
+                                button 1번
+                            li.ai-bot__item
+                                button 2번
+                            li.ai-bot__item
+                                button 3번
+                    li.lnb-bot__item
+                        button.go-top
+    block bottomScripts
+        script.
+            // ai-bot 버튼 클릭 이벤트
+            $(".ai-bot").on("click", function () {
+                const $botList = $(this).parent().children(".ai-bot__list");
+
+                if ($botList.is(":visible")) {
+                    $botList.slideUp(200).fadeOut(200);  // slideUp 후 fadeOut
+                } else {
+                    $botList.stop(true, true).slideDown(200).fadeIn(200); // slideDown 후 fadeIn
+                }
+            });
+            // lnb-top__item 버튼 클릭시
+            $(".lnb-top__item > button").on("click", function () {
+                $(".lnb-top__item > button").removeClass('active');
+                $(this).addClass('active');
+            });

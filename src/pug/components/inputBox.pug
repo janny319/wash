@@ -1,0 +1,23 @@
+mixin inputBox({ width, title, ess, value, type, placeholder, maxlength, readonly, unit, errMsg, className, showCharCount })
+    .input-basic(style=`width: ${width}` class=className)
+        .title(class=ess ? 'ess' : '')= title
+        .input-wrap
+            .input-wrap__input
+                input(
+                    value=value
+                    type=type
+                    placeholder=placeholder
+                    maxlength=maxlength
+                    readonly=readonly ? true : undefined
+                    class="input-field"
+                )
+                button.btn-clear(type="button" style="display: none;")
+                if showCharCount
+                    .char-count
+                        span.current-count 0
+                        | /
+                        span.max-count= maxlength
+            if unit
+                em.unit= unit
+        if errMsg
+            p.errMsg= errMsg

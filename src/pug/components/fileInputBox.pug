@@ -1,0 +1,11 @@
+mixin fileInputBox({width, title, buttonText, errMsg, ess=false})
+    .file-input-box(style=`width: ${width}`)
+        .title(class=ess ? 'ess' : '')
+            = title
+        .file-wrap
+            - const sanitizedTitle = title.replace(/\s+/g, '-').replace(/[^\w-]/g, ''); // 안전한 ID로 변경
+            input(type="file" class="file-input" id=`fileInput-${sanitizedTitle}` style="display:none")
+            span.file-name(id=`file-name-${sanitizedTitle}`)= '선택된 파일이 없음'
+            button(type="button" class="btn-delete" style="display:none;" id=`delete-btn-${sanitizedTitle}`)
+            button(type="button" class="btn-select" onclick=`$('#fileInput-${sanitizedTitle}').click()`)= buttonText
+        span.errMsg= errMsg

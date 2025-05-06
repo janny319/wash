@@ -1,0 +1,7 @@
+mixin select({name, options, selectedValue, disabled, placeholder})
+  select(name=name, disabled=disabled, required)
+    // placeholder가 없을 경우, 첫 번째 option으로 placeholder 추가
+    if placeholder
+      option(value="", selected=(selectedValue === null ? true : null), disabled=true, class="placeholder")= placeholder
+    each option in options
+      option(value=option.value, selected=(option.value === selectedValue ? 'selected' : null))= option.text

@@ -1,0 +1,78 @@
+@use 'abstracts/variables' as var;
+@use 'abstracts/variables' as mix;
+
+.textarea-box{
+    width: auto;
+    position: relative;
+    .title{
+        width: 100%;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: -0.032rem;
+        margin-bottom: 1.2rem;
+        &.ess{
+            &::after{
+                content: '*';
+                font-size: 1.6rem;
+                font-weight: 500;
+                line-height: normal;
+                letter-spacing: -0.032rem;
+                color: #333;
+            }
+        }
+    }
+    .textarea-wrap{
+        width: 100%;
+        height: 100%;
+        border: 1px solid #eee;
+        background-color: var.$color-white;
+        border-radius: 0.8rem;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        align-items: center;
+        textarea{
+            flex: 1;
+            width: 100%;
+            height: 100%;
+            padding: 1.6rem;
+            font-size: 1.5rem;
+            color: var.$color-black;
+            &::placeholder{
+                color: #999;
+            }
+            &:read-only{
+                background-color: var.$color-line_03;
+            }
+        }
+        .btn-clear{
+            width: 3rem;
+            height: 3rem;
+            position: relative;
+            &::after{
+                content: '';
+                width: 1.8rem;
+                height: 1.8rem;
+                background: url('../images/icon/ico_input_clear.svg') 0 0 no-repeat;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+    @include mix.respond-to(mobile){
+        padding-bottom: 0;
+        .input-wrap{
+            display: flex;
+
+            input{
+                font-size: 1.5rem;
+            }
+        }
+    }
+    & + .input-box, & + .select-box, & + .textarea-box, & + .file-input-box{
+        margin-top: 2.4rem;
+    }
+}

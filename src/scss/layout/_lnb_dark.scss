@@ -1,0 +1,39 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/variables" as mix;
+
+body{
+    &.dark-mode{
+        .lnb-wrap{
+            border-left: 1px solid #333;
+            background: #1F1F1F;
+            .lnb{
+                .lnb-top{
+                    &__item{
+                        > button{
+                            color: #999;
+                            &:before{
+                                background-color: #ccc;
+                            }
+                            &.active{
+                                color: #4E60FF;
+                                &:before{
+                                    background-color: #4E60FF;
+                                }
+                            }
+                        }
+                    }
+                }
+                .lnb-bot{
+                    &__item{
+                        .go-top{
+                            background: url('../images/icon/ico_go-top_dark.svg') 0 0 / 100% 100% no-repeat;
+                        }
+                    }
+                }
+            }
+            @include mix.respond-to(terminal){
+                border-top: 1px solid rgba(255, 255, 255, 0.18);
+            }
+        }
+    }
+}

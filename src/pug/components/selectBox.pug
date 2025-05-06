@@ -1,0 +1,9 @@
+mixin selectBox({width, title, options, value, ess=false, placeholder=null})
+    .select-box(style=`width: ${width}`)
+        .title(class=ess ? 'ess' : '')= title
+        .select-wrap
+            select(class="select-field", required)
+                if placeholder
+                    option(value="", selected=!value, disabled=true, class="placeholder")= placeholder
+                each option in options
+                    option(value=option.value, selected=option.value === value ? true : false)= option.label

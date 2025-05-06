@@ -1,0 +1,15 @@
+mixin tab({tabs, isLink=false, className})
+    .tab(data-js="tab" class=className)
+        ul.tab__btns
+            each tab, index in tabs
+                if isLink
+                    li.tab__item(class=(tab.isActive ? 'active' : ''))
+                        a(href="#")= tab.text
+                else
+                    li.tab__item(data-js="tab__btns" data-index=index)
+                        button(type="button")= tab.text
+        if isLink
+            // isLink가 true일 때는 패널을 렌더링하지 않음
+        else
+            div.tab__panels
+                block

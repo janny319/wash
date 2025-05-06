@@ -1,0 +1,25 @@
+mixin textAreaBox({width, height, title, placeholder, maxlength, readonly=false, ess, showCharCount, value, className})
+    .textarea(style=`width: ${width};` class= className)
+        .title(class=ess ? 'ess' : '')
+            = title
+        .text-wrap(style=`height: ${height};`)
+            if readonly
+                textarea(
+                    maxlength=`${maxlength}`
+                    placeholder=placeholder
+                    readonly
+                    class="textarea-field"
+                    data-maxlength=`${maxlength}`
+                )= value
+            else
+                textarea(
+                    maxlength=`${maxlength}`
+                    placeholder=placeholder
+                    class="textarea-field"
+                    data-maxlength=`${maxlength}`
+                )= value
+            if showCharCount
+                .char-count
+                    span.current-count 0
+                    | /
+                    span.max-count= maxlength

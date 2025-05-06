@@ -1,0 +1,10 @@
+mixin paging(currentPage, totalPages)
+    .paging
+        button.paging__prev(
+            disabled=currentPage === 1, aria-label="Previous Page")
+        ul.paging__list
+            each pageNumber in [...Array(totalPages).keys()].map(n => n + 1)
+                li.paging__item
+                    button(class=pageNumber === currentPage ? 'active' : '', aria-label=`Page ${pageNumber}`)= pageNumber
+        button.paging__next(
+            disabled=currentPage === totalPages, aria-label="Next Page")

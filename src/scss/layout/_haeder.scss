@@ -1,0 +1,454 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/variables" as mix;
+
+.header{
+    width: 100%;
+    height: 8rem;
+    transition: 0.3s ease;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    display: flex;
+    justify-content: center;
+    &.on{
+        .header-bg{
+            height: 30rem;
+        }
+    }
+    .header-bg{
+        width: 100%;
+        height: 8rem;
+        background-color: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(6px);
+        border-bottom: 1px solid #eee;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: height 0.1s ease;
+    }
+    &__box{
+        width: 100%;
+        max-width: 128rem;
+        padding: 0 4em;
+        height: 8rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__logo{
+        width: auto;
+        display: block;
+        position: relative;
+        z-index: 10;
+        a{
+            width: 19.4rem;
+            height: 2.7rem;
+            display: flex;
+            align-items: center;
+            display: inline-block;
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #372FCC;
+        }
+    }
+    &__gnb{
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        .gnb{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            &__item{
+                @include mix.txt-body2;
+                font-weight: 400;
+                color: #666;
+                position: relative;
+                display: flex;
+                align-items: center;
+                > a{
+                    height: 100%;
+                    padding: 2.8rem 0 2.5rem 0;
+                    z-index: 10;
+                    position: relative;
+                }
+                &.active{
+                    position: relative;
+                    color: #3518F5;
+                    font-weight: 700;
+                    &::after{
+                        content: '';
+                        width: calc(100% + 4rem);
+                        height: .2rem;
+                        display: inline-block;
+                        background-color: #3518F5;
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        z-index: 10;
+                    }
+                }
+                & + li{
+                    margin-left: 12rem;
+                }
+            }
+            &__submenu{
+                width: 100%;
+                height: 20rem;
+                padding: 3rem 0;
+                position: fixed;
+                top: 8rem;
+                left: 0;
+                display: none;
+                .sec-depth{
+                    width: 100%;
+                    max-width: 128rem;
+                    display: flex;
+                    justify-content: center;
+                    margin: 0 auto;
+                    &__item{
+                        color: #333;
+                        a{
+                            @include mix.txt-body3;
+                            font-weight: 700;
+                            color: #333;
+                        }
+                        & + .sec-depth__item{
+                            margin-left: 20.4rem;
+                        }
+                    }
+                }
+                .third-depth{
+                    width: 100%;
+                    margin-top: 2.6rem;
+                    &__item{
+                        a{
+                            @include mix.txt-body3;
+                            font-weight: 400;
+                            color: #333;
+                            &:hover{
+                                font-weight: 600;
+                                color: #3518F5;
+                            }
+                        }
+                        & + .third-depth__item{
+                            margin-top: 1.6rem;
+                        }
+                    }
+                }
+                @include mix.respond-to(mobile){
+                    display:block;
+                }
+            }
+        }
+    }
+    &__user{
+        display: flex;
+        align-items: center;
+        button{
+            font-size: 1.6rem;
+            letter-spacing: -0.032rem;
+            color: #666;
+            padding-left: 2.4rem;
+            position: relative;
+            &::before{
+                content: '';
+                width: 2rem;
+                height: 2rem;
+                display: inline-block;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            &.login{
+                &::before{
+                    @include mix.svg('../images/icon/ico_header_login.svg', 2rem, 2rem, #666);
+                }
+            }
+            &.logout{
+                &::before{
+                    @include mix.svg('../images/icon/ico_header_logout.svg', 2rem, 2rem, #666);
+                }
+            }
+            & + button{
+                margin-left: 2.4rem;
+                &::after{
+                    content: '';
+                    width: .1rem;
+                    height: 1.3rem;
+                    display: inline-block;
+                    background-color: var.$color-line_02;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: -1.2rem;
+                }
+            }
+        }
+    }
+}
+.header-mo{
+    display: none;
+}
+.toggle-box{
+    .toggle{
+        background-color: #D7E9FF;
+        &.theme{
+            position: relative;
+            display: inline-block;
+            margin-left: 2.8rem;
+            .toggle-ico{
+                &::after{
+                    content: '';
+                    width: 2.8rem;
+                    height: 2.8rem;
+                    @include mix.svg('../images/icon/ico_theme_white.svg', 1.8rem, 1.8rem, #3c8be6);
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 0.6rem;
+                    transition: 0.5s ease;
+                }
+                &::before{
+                    content: '';
+                    width: 2.8rem;
+                    height: 2.8rem;
+                    @include mix.svg('../images/icon/ico_theme_black.svg', 1.8rem, 1.8rem, #b0cef2);
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 0.6rem;
+                    transition: 0.5s ease;
+                }
+            }
+            input{
+                display: none;
+                &:checked{
+                    & ~ .toggle-ico{
+                        &::after{
+                            background-color: #eee;
+                        }
+                        &::before{
+                            background-color: var.$color-black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include mix.respond-to(terminal){
+    .header{
+        display:none;
+    }
+    .header-mo{
+        width: 100%;
+        height: auto;
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 900;
+        border-bottom: 1px solid #eee;
+        &__box{
+            width: 100%;
+            height: 6rem;
+            padding: 2rem;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-direction: row-reverse;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(6px);
+        }
+        &__logo{
+            a{
+                width: 14.6rem;
+                height: 2rem;
+                display: inline-block;
+                background: url('../images/img/img_logo.svg') 0 0 / 100% auto no-repeat;
+            }
+        }
+        .menu-open{
+            width: 4rem;
+            height: 6rem;
+            position: relative;
+            &::after{
+                content: '';
+                width: 2rem;
+                height: 2rem;
+                display:inline-block;
+                @include mix.svg('../images/icon/ico_menu_open.svg', 2rem, 2rem, #222);
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+            }
+        }
+    }
+    .mo-gnb{
+        width: 100%;
+        height: 100%;
+        background-color: var.$color-white;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 999;
+        transition: transform 0.3s ease;
+        &.mo-gnb-open{
+            transform: translateX(-100%);
+        }
+        &.mo-gnb-close{
+            transform: translateX(0);
+        }
+        &__top{
+            width: 100%;
+            height: 6rem;
+            padding: 0 2rem;
+            background-color: var.$color-white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .toggle-box{
+                width: auto;
+                height: fit-content;
+                .toggle{
+                    margin-left: 0;
+                }
+            }
+            .close{
+                width: 6rem;
+                height: 6rem;
+                position: relative;
+                &::after{
+                    content: '';
+                    width: 2.6rem;
+                    height: 2.6rem;
+                    display: inline-block;
+                    @include mix.svg('../images/icon/ico_close_mo.svg', 2.6rem, 2.6rem, #222);
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+        &__user{
+            width: 100%;
+            padding: 4rem 2rem;
+            display: flex;
+            flex-direction: column;
+            > p{
+                width: 100%;
+                @include mix.txt-tit3;
+                font-weight: 600;
+                text-align: left;
+                color: #333;
+            }
+        }
+        &__wrap{
+            width: 100%;
+            height: calc(100% - 28rem);
+            position: relative;
+            background-color: #F5F7FA;
+            padding: 4rem 2rem;
+            overflow: hidden;
+            overflow-y: scroll;
+            .gnb{
+                width: 100%;
+                &__item{
+                    width: 100%;
+                    color: #333;
+                    > a{
+                        @include mix.txt-body2;
+                        font-weight: 600;
+                    }
+                    & + li{
+                        margin-top: 3rem;
+                    }
+                }
+                &__submenu{
+                    width: 100%;
+                    margin-top: 1.4rem;
+                    border-radius: 1.8rem;
+                    background-color: #fff;
+                    padding: 4rem 3.2rem;
+                    display: block;
+                    .sec-depth{
+                        &__item{
+                            width: 100%;
+                            @include mix.txt-body3;
+                            font-weight: 500;
+                            color: #333;
+                            position: relative;
+                            display: block;
+                            > a{
+                                &::after{
+                                    content: '';
+                                    width: 1.8rem;
+                                    height: 1.8rem;
+                                    display: inline-block;
+                                    @include mix.svg('../images/icon/ico_arr_right.svg' , 1.8rem, 1.8rem, #aaa);
+                                    position: absolute;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                    right: 0;
+                                }
+                            }
+                            & + li{
+                                margin-top: 4rem;
+                            }
+                            .third-depth{
+                                width: 100%;
+                                margin-top: 2.2rem;
+                                &__item{
+                                    width: 100%;
+                                    @include mix.txt-body4;
+                                    font-weight: 400;
+                                    color: #555;
+                                    > a{
+                                        width: 100%;
+                                        display: inline-block;
+                                        position: relative;
+                                        &::after{
+                                            content: '';
+                                            width: 1.8rem;
+                                            height: 1.8rem;
+                                            display: inline-block;
+                                            @include mix.svg('../images/icon/ico_arr_right.svg' , 1.8rem, 1.8rem, #aaa);
+                                            position: absolute;
+                                            top: 50%;
+                                            transform: translateY(-50%);
+                                            right: 0;
+                                        }
+                                    }
+                                    & + li{
+                                        margin-top: 1.8rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .login{
+            width: 100%;
+            margin-top: 2rem;
+            padding:1.6rem 0;
+            color:#fff;
+            @include mix.txt-body4;
+            background-color:#333;
+            border-radius:0.8rem;
+        }
+    }
+}
+.lnb-login{
+    .header{
+        .header__box{
+            max-width: 136.1rem;
+        }
+    }
+}

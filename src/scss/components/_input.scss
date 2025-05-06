@@ -1,0 +1,74 @@
+// radio
+.input-radio{
+    display: flex;
+    align-items: center;
+    input[type="radio"] {
+        display: none;
+        & + label {
+            display: inline-block;
+            position: relative;
+            padding-left: 3.2rem;
+            font-size: 1.6rem;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: -0.032rem;
+            color: #666;
+            cursor: pointer;
+            &::after {
+                content: '';
+                width: 2.4rem;
+                height: 2.4rem;
+                background: url('../images/icon/ico_radio.svg') 0 0 / 100% 100% no-repeat;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+        &:checked {
+            & + label {
+                &::after {
+                    background: url('../images/icon/ico_radio_check.svg') 0 0 / 100% 100% no-repeat;
+                }
+            }
+        }
+    }
+    & + .input-radio {
+        margin-top: 1.6rem;
+    }
+}
+// checkbox
+.input-checkbox {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    input[type="checkbox"]{
+        display: none;
+        & + label{
+            display: inline-block;
+            position: relative;
+            padding-left: 3rem;
+            font-size: 1.4rem;
+            &::after {
+                content: '';
+                width: 2.4rem;
+                height: 2.4rem;
+                background: url('../images/icon/ico_checkbox.svg') 0 0 / 100% 100% no-repeat;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+        &:checked{
+            & + label{
+                &::after{
+                    background: url('../images/icon/ico_checkbox_on.svg') 0 0 / 100% 100% no-repeat;
+                }
+            }
+        }
+    }
+    & + .input-checkbox{
+        margin-left: 0.4rem;
+    }
+}

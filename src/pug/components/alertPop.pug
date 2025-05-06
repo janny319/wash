@@ -1,0 +1,14 @@
+mixin alertPop({id, title='기본 제목', message='기본 메시지', buttons=[], className})
+    .popWrap(id=id class=className)
+        .dimd
+        .alert
+            .alert__inner
+                .alert__header
+                    h2.alert__tit= title
+                .alert__body
+                    p.alert__message= message
+                //- 버튼 영역
+                if buttons.length > 0
+                    .alert__footer
+                        each button in buttons
+                            button(type="button", class=button.class, onclick=button.onclick)= button.text

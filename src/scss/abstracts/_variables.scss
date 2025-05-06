@@ -1,0 +1,185 @@
+$root-font-size:  10px;
+
+//font weight
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+$font-weight-bolder: 800;
+$font-weight-extrabold: 900;
+
+//colors
+$color-black: #222;
+$color-white:  #fff;
+$color-gray100: #F1F3F9;
+$color-gray200: #f7f7f7;
+$color-gray300: #ccc;
+
+$color-line_01: #aaa;
+$color-line_02: #ddd;
+$color-line_03: #F5F5F7;
+
+$color-text_02: #777;
+$color-text_03: #888;
+
+$color-primary: #FF4A55;
+
+$color-diagram_04: #f3f7fa;
+$color-diagram_05: #9baab8;
+
+//box-shadow
+$shadow-01: 0 4rem 4rem -1.4rem rgba(35, 56, 117, 0.3);
+$shadow-02: 0 -3rem 3.2rem -3rem rgba(35, 56, 117, 0.15);
+$shadow-03: 0px 0rem 2rem 0rem rgba(35, 56, 117, 0.3);
+
+//svg
+@mixin svg($path, $width, $height, $color) {
+    background-color: $color;
+    mask-image: url($path);
+    background-size: cover;
+    mask-size: $width, $height ;
+    mask-position: center;
+    mask-repeat: no-repeat;
+}
+
+// 1줄 말줄임
+@mixin text-overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// 여러줄 말줄임
+@mixin text-overflow($line: 2) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+//button
+@mixin button_line($padding: 0, $lineColor, $fontSize, $fontColor, $radius) {
+    padding: $padding;
+    border-radius: $radius;
+    border: 1px solid $lineColor;
+    font-size: $fontSize;
+    color: $fontColor;
+}
+
+@mixin button_color($padding: 0, $color, $fontSize, $fontColor, $radius) {
+    padding: $padding;
+    border-radius: $radius;
+    font-size: $fontSize;
+    color: $fontColor;
+    background-color: $color;
+}
+// 반응형 해상도 분기
+@mixin respond-to($breakpoint) {
+    @if $breakpoint ==mobile {
+        @media (max-width: 720px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==tablet {
+        @media (min-width: 721px) and (max-width: 1024px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==terminal {
+        @media (min-width: 240px) and (max-width: 1024px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==terminal2 {
+        @media (min-width: 240px) and (max-width: 1280px) {
+            @content;
+        }
+    }
+}
+
+@mixin txt-h1 {
+    font-size:7.6rem;
+    line-height:8.8rem;
+    letter-spacing: -.152rem;
+}
+
+@mixin txt-h2 {
+    font-size:6.2rem;
+    line-height:7.4rem;
+    letter-spacing: -.124rem;
+}
+
+@mixin txt-h3 {
+    font-size:5.4rem;
+    line-height:6.4rem;
+    letter-spacing: -.108rem;
+}
+
+@mixin txt-tit1 {
+    font-size:3.6rem;
+    line-height:4.4rem;
+    letter-spacing: -.072rem;
+}
+
+@mixin txt-tit2 {
+    font-size:3.2rem;
+    line-height:4rem;
+    letter-spacing: -.064rem;
+}
+
+@mixin txt-tit3 {
+    font-size:2.8rem;
+    line-height:3.4rem;
+    letter-spacing: -.056rem;
+}
+
+@mixin txt-tit4 {
+    font-size:2.6rem;
+    line-height:3.2rem;
+    letter-spacing: -.052rem;
+}
+
+@mixin txt-tit5 {
+    font-size:2.4rem;
+    line-height:3rem;
+    letter-spacing: -.048rem;
+}
+
+@mixin txt-body1 {
+    font-size:2.2rem;
+    line-height:2.8rem;
+    letter-spacing: -.044rem;
+}
+
+@mixin txt-body2 {
+    font-size:2rem;
+    line-height:2.8rem;
+    letter-spacing: -.04rem;
+}
+
+@mixin txt-body3 {
+    font-size:1.8rem;
+    line-height:2.6rem;
+    letter-spacing: -.036rem;
+}
+
+@mixin txt-body4 {
+    font-size:1.6rem;
+    line-height:2.4rem;
+    letter-spacing: -.032rem;
+}
+
+@mixin txt-cap1 {
+    font-size:1.4rem;
+    line-height:2.2rem;
+    letter-spacing: -.028rem;
+}
+
+@mixin txt-cap2 {
+    font-size:1.2rem;
+    line-height:1.8rem;
+    letter-spacing: -.024rem;
+}

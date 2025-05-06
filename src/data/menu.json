@@ -1,0 +1,20 @@
+{
+    "menu": [
+        {
+            "title": "회사소개",
+            "link": "company.html"
+        },
+        {
+            "title": "세탁안내",
+            "link": "info.html"
+        },
+        {
+            "title": "배송지역",
+            "link": "delivery.html"
+        },
+        {
+            "title": "가격안내",
+            "link": "price.html"
+        }        
+    ]
+}

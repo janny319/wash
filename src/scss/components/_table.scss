@@ -1,0 +1,169 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/variables" as mix;
+
+.table{
+    width: 100%;
+    overflow-y:auto;
+    table{
+        width:100%;
+        min-width:90rem;
+        table-layout: fixed;
+        thead{
+            tr{
+                th{
+                    padding:1.8rem 0;
+                    color:#333;
+                    font-size:2.2rem;
+                    background-color: #F6F7FA;
+                    line-height:1.9rem;
+                    font-weight:600;
+                    &:first-child {
+                        border-radius:1.6rem 0 0 1.6rem;
+                    }
+                    &:last-child {
+                        border-radius:0 1.6rem 1.6rem 0;
+                    }
+                    @include mix.respond-to(terminal){
+                        &:first-child {
+                            border-radius:.8rem 0 0 .8rem;
+                        }
+                        &:last-child {
+                            border-radius:0 .8rem .8rem 0;
+                        }
+                    }
+                }
+            }
+        }
+        tbody{
+            tr{
+                border-bottom: 1px solid #EEEEEE;
+                th{
+                    padding: 1rem 0;
+                    font-size: 1.6rem;
+                    background-color: #F6F7FA;
+                }
+                td{
+                    padding:2rem 0;
+                    font-size:1.8rem;
+                    color: #222;
+                    text-align: center;
+                    &:nth-of-type(2){
+                        border-left: 1px solid #eee;;
+                    }
+                    .no-list{
+                        width: fit-content;
+                        text-align: center;
+                        position: relative;
+                        margin: 0 auto;
+                        display: flex;
+                        padding: 7.5rem 0 7.5rem 3rem;
+                        &::before{
+                            content: '';
+                            width: 2.4rem;
+                            height: 2.4rem;
+                            display: inline-block;
+                            background: url('../images/icon/ico_mark.svg') 0 0  / 100% 100% no-repeat;
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            left: 0;
+                        }
+                    }
+                    &.bg-gray {
+                        background: #F5F5F7;
+                    }
+                    &.bg-highlight {
+                        background: #555555;
+                        color: #fff;
+                    }
+                    &.highlight {
+                        position: relative;
+                        background: #e6f7ff;
+                    }
+                    .delete{
+                        height: 2.6rem;
+                        line-height: 2.6rem;
+                        padding: 0 1.3rem;
+                        border-radius: 0.4rem;
+                        background-color: var.$color-line_03;
+                        color: var.$color-text_02;
+                        font-size: 1.2rem;
+                    }
+                    &.border-left{
+                        border-left: 1px solid var.$color-line_02
+                    }
+                    em{
+                        width: 100%;
+                        text-align: left;
+                        display: inline-block;
+                        padding: 0.5rem 0 0 1.8rem;
+                        color: var.$color-text_03;
+                        position: relative;
+                        &::before{
+                            content: '*';
+                            position: absolute;
+                            top: 0.5rem;
+                            left: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.type02{
+        table{
+            width: 100%;
+            border-top: 0;
+            tr{
+                height: 4.6rem;
+                line-height: 4.6rem;
+                background-color: var.$color-line_03;
+                border-bottom: 0;
+                th{
+                    font-size: 1.6rem;
+                    font-weight: 500;
+                    color: var.$color-text_02;
+                    padding-left: 2.6rem;
+                    border-right: 1px solid var.$color-line_02;
+                }
+                td{
+                    font-size: 1.6rem;
+                    font-weight: 400;
+                    color: var.$color-text_03;
+                    text-align: center;
+                }
+                &:nth-of-type(2n){
+                    background-color: var.$color-white;
+                }
+                &.month-total{
+                    background-color: var.$color-diagram_05;
+                }
+            }
+        }
+    }
+    &--has-input {
+        .prompt {
+            justify-content: center;
+            h5 {
+                display: none;
+            }
+            input[type="text"] {
+                max-width: 14rem;
+                text-align: center;
+            }
+        }
+        .input-checkbox {
+            justify-content: center;
+            margin: 0 1rem;
+        }
+    }
+    @include mix.respond-to(mobile){
+        padding:0 2rem;
+    }
+    &+.paging {
+        margin-top:2rem;
+    }
+    & + .table{
+        margin-top: 4rem;
+    }
+}

@@ -1,0 +1,24 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/variables" as mix;
+
+body{
+    &.dark-mode{
+        .no-data{
+            > p{
+                color: #888;
+            }
+            > button {
+                border-color:#333333;
+                background-color:#333333;
+                color:#FFFFFF;
+            }
+        }
+        input[type='checkbox'] {
+            &+label {
+                &::before {
+                    border-color:#666666;
+                }
+            }
+        }
+    }
+}

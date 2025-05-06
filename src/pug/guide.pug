@@ -1,0 +1,328 @@
+doctype html
+
+html(lang="ko")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title 가이드 페이지
+		link(rel="stylesheet", href="../css/base.css")
+		link(rel="stylesheet", href="../css/layout.css")
+		link(rel="stylesheet", href="../css/layout_dark.css")
+		link(rel="stylesheet", href="../css/components.css")
+		script(src="../js/libs/jquery-3.7.1.min.js")
+		script(src="https://cdn.jsdelivr.net/npm/chart.js")
+
+		include ./components/tab.pug
+		include ./components/accordion.pug
+		include ./components/alertPop.pug
+		include ./components/layerPop.pug
+		include ./components/dropDown.pug
+		include ./components/inputBox.pug
+		include ./components/inputBasic.pug
+		include ./components/fileInputBox.pug
+		include ./components/textArea.pug
+		include ./components/textAreaBox.pug
+		include ./components/paging.pug
+		include ./components/pageTitle.pug
+		include ./components/select.pug
+		include ./components/modal.pug
+		include ./components/toggleButton.pug
+		include ./components/checkBox.pug
+		include ./components/radio.pug
+		include ./components/stopWatch.pug
+
+		- const links = [ {text: 'link01', isActive: true}, {text: 'link02', isActive: false}, {text: 'link03', isActive: false} ]
+
+	body
+		block content
+			.guide
+				.guide__element
+					h4 기본 작업 가이드
+					.info-box
+						h4 해상도
+							p
+								| - mobile : 720px 이하 <br/>
+								| - tablet : 721px ~ 1023px 이하<br/>
+								| - pc : 1024px ~ 1280px
+					.info-box
+						h4 크로스 브라우징
+							p 최신 버젼 기준으로 작업합니다.<br/>
+								| - ios : 18.1 <br/>
+								| - aos : 14<br/>
+								| - Google Chrome: 최신 버전 130 <br/>
+								| - microsoft : Edge <br/>
+								| - Safari : 18.1
+					.info-box
+						h4 웹표준 준수
+							p 별도의 툴을 사용하지 않고 w3c에서 진행한 결과값으로 진행합니다. <br/>
+								a(href="https://validator.w3.org/" target='_blank') https://validator.w3.org/
+					.info-box
+						h4 plugin
+							p
+								a(href="https://www.chartjs.org/" target='_blank') - chart.js
+
+				.guide__element
+					h4 Tab style (link 유무에 따라 하단 영역 노출 제어 가능)
+					+tab({
+						tabs:[
+							{text: 'tab01'},
+							{text: 'tab02'},
+							{text: 'tab03'}
+						],
+						isLink: false,
+						className: ''
+					})
+						.tab__panels__box(data-index="0")
+							p 1번 탭 내용입니다.
+						.tab__panels__box(data-index="1")
+							p 2번 탭 내용입니다.
+						.tab__panels__box(data-index="2")
+							p 3번 탭 내용입니다.
+					<br/>
+					<br/>
+					+tab({
+						tabs:[
+							{text: 'tab01', isActive: true},
+							{text: 'tab02', isActive: false},
+							{text: 'tab03', isActive: false}
+						],
+						isLink: true,
+						className: ''
+					})
+
+				.guide__element
+					h4 Accordion style
+					+accordian({
+						desc: 'acc',
+						items:[
+							{
+								title: 'section 1',
+								cont: '1번 내용입니다.111'
+							},
+							{
+								title: 'section 2',
+								cont: '2번 내용입니다.'
+							},
+							{
+								title: 'section 3',
+								cont: '3번 내용입니다.'
+							},
+						],
+						className: ''
+					})
+
+				.guide__element
+					h4 dropDown
+					+dropDown({
+						width:'100%',
+						items:['옵션 1', '옵션 2', '옵션 3'],
+						selectText:'선택된 항목 없음',
+						errMsg:'항목을 선택해 주세요.',
+						className: ''
+					})
+
+				.guide__element
+					h4 select (기본 select)
+					+select({
+						name: 'projectStatus',
+						options:[
+							{ value: 'requirement', text: '요구사항분석' },
+							{ value: 'ia', text: 'IA' },
+							{ value: 'ui-ux', text: 'UI, UX 설계' },
+							{ value: 'design', text: '디자인시안' }
+						],
+						selectedValue: null,
+						disabled: false,
+						placeholder: '선택'
+					})
+
+				.guide__element
+					h4 inputBox
+					+inputBox({
+						width:'100%',
+						title: 'test',
+						ess: true,
+						value: '',
+						type: 'text',
+						placeholder:'제목이 있는 input type 입니다.',
+						maxlength: '10',
+						readonly: false,
+						errMsg:'회사명을 입력해 주세요.',
+						unit: '자',
+						className: 'row',
+						showCharCount: true,
+					})
+
+					+inputBasic({
+						width:'100%',
+						value: '',
+						type: 'text',
+						placeholder:'제목이 없는 기본 input type 입니다.',
+						maxlength: '10',
+						readonly: false,
+						errMsg:'회사명을 입력해 주세요.',
+						unit: '',
+						showCharCount: false,
+					})
+
+				.guide__element
+					h4 파일첨부
+					+fileInputBox({
+						width: '100%',
+						title: '',
+						buttonText: '파일 선택',
+						errMsg: ''
+					})
+
+				.guide__element
+					h4 textarea
+					+textAreaBox({
+						width:'100%',
+						height: '200px',
+						title:'내용',
+						name:'',
+						placeholder:'제목이 있는 textarea',
+						maxlength:'200',
+						readonly: false,
+						errMsg:'내용을 입력해 주세요.',
+						readonly:false,
+						ess: true,
+						showCharCount: true,
+						className: 'row'
+					})
+
+					+textArea({
+						width:'100%',
+						height: '200px',
+						name:'',
+						placeholder:'기본 textarea',
+						maxlength:'200',
+						errMsg:'내용을 입력해 주세요.',
+						readonly:false
+					})
+
+				.guide__element
+					h4 paging
+					+paging(1, 5)
+
+				.guide__element
+					h4 table
+					.table-cont
+						.table
+							table
+								colgroup
+									col(width = "5%")
+									col(width = "20%")
+									col(width = "15%")
+									col(width = "15%")
+									col(width = "15%")
+									col(width = "15%")
+									col(width = "15%")
+								thead
+									tr
+										th no.
+										th 부서명
+										th 역할식별자
+										th 역할명
+										th 시작일자
+										th 종료일자
+										th 추가 XP
+								tbody
+									tr
+										td 1
+										td 특별부서
+										td 식별자1
+										td 중요한 역할
+										td yyyy-mm-dd
+										td yyyy-mm-dd
+										td 추가
+
+				.guide__element
+					h4 page Title
+					+pageTitle({
+						title:'페이지명',
+						depth1:'1 뎁스 메뉴',
+						depth2:'2뎁스 메뉴',
+						depth3:'3뎁스 메뉴',
+						depth4:'4뎁스 메뉴'
+					})
+
+				.guide__element
+					h4 modal popup
+					button(type="button", onclick="exampleModal.open()") Open Modal
+					+modal({
+						id: "exampleModal",
+						title: "예제 모달",
+						buttons: [
+							{ text: "확인", class: "btn-confirm", onclick: "confirmAction()" },
+							{ text: "취소", class: "btn-cancel" }
+						]
+					})
+						p 모달입니다.
+
+				.guide__element
+					h4 Alert
+					button(type="button", onclick="exampleAlert.open()") Open Alert
+					+alertPop({
+						id: "exampleAlert",
+						title: "예제 얼럿",
+						message: "정말 삭제하시겠습니까?",
+						buttons: [
+							{ text: "확인", class: "btn-confirm", onclick: "confirmAction()" },
+							{ text: "취소", class: "btn-cancel" }
+						]
+					})
+
+				.guide__element
+					h4 공지팝업
+					button(type="button", onclick="exampleNotice.open()") Open Notice
+					+layerPop({
+						id: "exampleNotice",
+						imgSrc: "/images/temp/img_high_open_notice.png",
+						className: "",
+					})
+
+				.guide__element
+					h4 Toggle Button
+					+toggleButton("toggle3", true)
+					+toggleButton("toggle4", true, "theme")
+
+				.guide__element
+					h4 Check-box
+					+checkbox({
+						text: 'test',
+						id: 'exampleCheck'
+					})
+
+				.guide__element
+					h4 Radio-box
+					+inputRadio({
+						name: 'test01',
+						labelText: 'test01',
+						id: 'test01'
+					})
+
+				.guide__element
+					h4 Stop Watch
+					+stopwatch()
+			// 상단으로 버튼
+			button.go-top
+				img(src="/images/icon/ico_go-top.svg" alt="상단으로 이동")
+
+	script(src="../js/pubScript.js")
+	script(src="../js/common.js")
+	block bottomScripts
+	script.
+		//tab
+		const tab = new Tab('.tab');
+		//accordion
+		const acc = new Accordion('[data-uuid="acc"]', {
+			type: 'multiple', // 'single' 또는 'multiple'
+			animationMode: true, // 애니메이션 사용 여부
+			defaultActiveIndices: [0], // 기본 활성화된 패널 인덱스
+		});
+
+		//popup
+		const exampleModal = new Popup('exampleModal');
+		const exampleAlert = new Popup('exampleAlert');
+		const exampleNotice = new Popup('exampleNotice');

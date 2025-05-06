@@ -1,0 +1,138 @@
+.main {
+  width: 100%;
+}
+.main__visual {
+  position: relative;
+  height: 50rem;
+  overflow: hidden;
+  background: #81BEF7;
+}
+.main__visual .img-wrap {
+  width: 50%;
+  height: 50rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.main__visual .img-wrap > img {
+  width: 100%;
+  height: 100%;
+}
+.main__visual .img-wrap::after {
+  content: "";
+  width: 50rem;
+  height: 50rem;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(-90deg, rgba(129, 190, 247, 0) 0%, rgb(129, 190, 247) 100%);
+}
+.main__visual .txt-wrap {
+  position: absolute;
+  top: 42%;
+  left: 10rem;
+  display: flex;
+  align-items: center;
+}
+.main__visual .txt-wrap h2 {
+  font-size: 12rem;
+  font-weight: 700;
+  color: #08298A;
+  text-align: center;
+}
+.main__visual .txt-wrap > em {
+  font-size: 3.2rem;
+  line-height: 3.4rem;
+  display: inline-block;
+  color: #08298A;
+}
+.main__cont {
+  width: 98rem;
+  margin: 0 auto;
+  padding: 12rem 0;
+}
+.main__cont .counsel {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.main__cont .counsel .call {
+  width: calc(50% - 2rem);
+  height: 20rem;
+  background-color: #045FB4;
+  border-radius: 2rem;
+  position: relative;
+}
+.main__cont .counsel .call::after {
+  content: "";
+  width: 8rem;
+  height: 8rem;
+  display: inline-block;
+  background: url("../../images/icon/ico_call.svg") center center/100% 100% no-repeat;
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.main__cont .counsel .call > em {
+  width: 100%;
+  text-align: center;
+  font-size: 3.2rem;
+  font-weight: 600;
+  display: inline-block;
+  color: #fff;
+  position: absolute;
+  bottom: 3rem;
+  left: 0;
+}
+.main__cont .counsel .call > em > p {
+  font-size: 1.8rem;
+  color: #fff;
+}
+.main__cont .counsel .kakao {
+  width: calc(50% - 2rem);
+  height: 20rem;
+  background-color: #fae100;
+  border-radius: 2rem;
+  position: relative;
+}
+.main__cont .counsel .kakao::after {
+  content: "";
+  width: 12rem;
+  height: 12rem;
+  display: inline-block;
+  background: url("../../images/icon/ico_kakao_logo.png") center center/100% 100% no-repeat;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.main__cont .counsel .kakao > em {
+  width: 100%;
+  text-align: center;
+  font-size: 3.2rem;
+  font-weight: 700;
+  display: inline-block;
+  color: #371d12;
+  position: absolute;
+  bottom: 3rem;
+  left: 0;
+}
+.main__cont .counsel .kakao > em > p {
+  font-size: 1.8rem;
+  color: #371d12;
+}
+.main__cont .price {
+  margin-top: 10rem;
+}
+.main__cont .price em.txt-s {
+  width: 100%;
+  display: inline-block;
+  font-size: 1.6rem;
+  text-align: right;
+  color: #666;
+  margin-top: 1rem;
+}
+/*# sourceMappingURL=../map/pages/main.css.map */

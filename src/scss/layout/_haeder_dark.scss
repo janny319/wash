@@ -1,0 +1,158 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/variables" as mix;
+body{
+    &.dark-mode{
+        background: #111;
+        .header{
+            .header-bg{
+                background-color: rgba(31, 31, 31, 0.6);
+                border-bottom: 1px solid #333;
+            }
+            &::before{
+                background-color: rgba(255, 255, 255, 0.18);
+            }
+            &__logo{
+                a{
+                    background: url('../images/img/img_logo_dark.svg') 0 0 / 100% 100% no-repeat;
+                }
+            }
+            &__gnb{
+                .gnb{
+                    &__item{
+                        color: #888;
+                        &.active{
+                            color: var.$color-white;
+                            &::after{
+                                background-color: var.$color-white;
+                            }
+                        }
+                    }
+                    &__submenu{
+                        .sec-depth{
+                            &__item{
+                                a, span{
+                                    color: #fff;
+                                }
+                            }
+                        }
+                        .third-depth{
+                            &__item{
+                                a{
+                                    color: #aaa;
+                                    &:hover{
+                                        color: #fff;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &__user{
+                button{
+                    color: var.$color-white;
+                    &.login{
+                        &::before{
+                            background-color: #fff;
+                        }
+                    }
+                    &.logout{
+                        &::before{
+                            background-color: #fff;
+                        }
+                    }
+                    & + button{
+                        &::after{
+                            background-color: var.$color-line_02;
+                        }
+                    }
+                }
+                .toggle-box{
+                    .toggle{
+                        background-color: #333333;
+                        &.theme{
+                            .toggle-ico{
+                                &::after{
+                                    background-color: #666666;
+                                }
+                                &::before{
+                                    background-color: #111111;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @include mix.respond-to(terminal){
+            .header-mo{
+                border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+                &__box{
+                    background-color: rgba(31, 31, 31, 0.6);
+                }
+                .menu-open{
+                    &::after{
+                        background: #fff;
+                    }
+                }
+                &__logo{
+                    a{
+                        background: url('../images/img/img_logo_dark.svg') 0 0 / 100% auto no-repeat;
+                    }
+                }
+            }
+            .mo-gnb{
+                background-color: #111;
+                &__top{
+                    background-color: #111;
+                    .close{
+                        &::after{
+                            background-color: #fff;
+                        }
+                    }
+                    .toggle-box{
+                        .toggle{
+                            background-color: #333333;
+                            &.theme{
+                                .toggle-ico{
+                                    &::after{
+                                        background-color: #666666;
+                                    }
+                                    &::before{
+                                        background-color: #111111;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &__wrap{
+                    background-color: #191919;
+                    .gnb{
+                        &__item{
+                            color: var.$color-white;
+                        }
+                        &__submenu{
+                            background-color: #242424;
+                            .sec-depth{
+                                &__item{
+                                    color: #fff;
+                                    .third-depth{
+                                        &__item{
+                                            color: #CCC;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &__user{
+                    > p{
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}

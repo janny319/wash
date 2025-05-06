@@ -1,0 +1,55 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/variables" as mix;
+
+.paging{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button{
+        width: 2.8rem;
+        height: 2.8rem;
+        border-radius: 100%;
+        line-height:2.8rem;
+    }
+    &__prev{
+        background: url('../images/icon/ico_paging_prev.svg') 0 0 no-repeat;
+    }
+    &__next{
+        background: url('../images/icon/ico_paging_next.svg') 0 0 no-repeat;
+    }
+    &__list{
+        display: flex;
+        align-items: center;
+        margin: 0 1rem;
+    }
+    &__item{
+        button{
+            width: 2.8rem;
+            height: 2.8rem;
+            border-radius: 100%;
+            font-size: 1.6rem;
+            color: #999;
+            &.active{
+                background-color: #F6F7FA;
+                color: #666;
+            }
+        }
+        & + li{
+            margin-left: 1.2rem;
+        }
+    }
+}
+
+.dark-mode {
+    .paging {
+        &__item {
+            button {
+                &.active {
+                    color:#FFFFFF;
+                    background-color:#333333;
+                }
+            }
+        }
+    }
+}

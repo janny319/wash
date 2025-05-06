@@ -1,0 +1,7 @@
+mixin dropDown({width, items, selectText, errMsg, className})
+    .drop-down(style=`width: ${width}` class=className)
+        .drop-down__select(data-js="select")= selectText
+        ul.drop-down__list(data-js="list")
+            each item, index in items
+                li.drop-down__item(data-value=index data-js="item")= item
+        span.errMsg= errMsg

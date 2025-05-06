@@ -1,0 +1,7 @@
+mixin accordian({desc, items, className})
+    .accordian(data-js="accordion" data-uuid=desc class=className)
+        each list, index in items
+            .accordion__item(data-index=index)
+                .accordion__head
+                    button(type="button", data-js="accordion__btn").accordion__head-btn= list.title
+                .accordion__panel(data-js="accordion__panel")= list.cont

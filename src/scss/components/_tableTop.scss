@@ -1,0 +1,42 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/variables" as mix;
+
+.table-top{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    > h4{
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 2.8rem;
+        color: var.$color-black;
+        em{
+            font-size: 1.4rem;
+            font-weight: 400;
+            line-height: 2.8rem;
+            color: var.$color-text_03;
+            padding-left: 0.8rem;
+        }
+    }
+    .odd{
+        display: flex;
+        align-items: center;
+        button{
+            width: 2rem;
+            height: 2rem;
+            position: relative;
+            &.refresh{
+                background: url('../images/icon/ico_refresh.svg') center center / 100% 100% no-repeat;
+            }
+            &.save{
+                background: url('../images/icon/ico_save.svg') center center / 100% 100% no-repeat;
+                margin-left: 1rem;
+            }
+            &.fold{
+                background: url('../images/icon/ico_fold.svg') center center / 100% 100% no-repeat;
+                margin-left: 2rem;
+            }
+        }
+    }
+}

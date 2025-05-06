@@ -1,0 +1,141 @@
+@charset "UTF-8";
+@use "../abstracts/variables" as var;
+@use "../abstracts/variables" as mix;
+
+.main{
+    width: 100%;
+    &__visual{
+        position: relative;
+        height: 50rem;
+        overflow: hidden;
+        background: #81BEF7;
+        .img-wrap{
+            width: 50%;
+            height: 50rem;
+            position: absolute;
+            top: 0;
+            right: 0;
+            > img{
+                width: 100%;
+                height: 100%;
+            }
+            &::after{
+                content: '';
+                width: 50rem;
+                height: 50rem;
+                display: inline-block;
+                position: absolute;
+                top: 0;
+                left: 0;                
+                background: linear-gradient(-90deg,rgba(129, 190, 247, 0) 0%, rgba(129, 190, 247, 1) 100%);
+            }
+        }
+        .txt-wrap{
+            position: absolute;
+            top: 42%; 
+            left: 10rem;        
+            display: flex;
+            align-items: center;            
+            h2{
+                font-size: 12rem;
+                font-weight: 700;
+                color: #08298A;
+                text-align: center;
+            }
+            > em{
+                font-size: 3.2rem;
+                line-height: 3.4rem;
+                display: inline-block;
+                color: #08298A;
+            }            
+        }        
+    }
+    &__cont{
+        width: 98rem;
+        margin: 0 auto;
+        padding: 12rem 0;
+        .counsel{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .call{
+                width: calc(50% - 2rem);
+                height: 20rem;
+                background-color: #045FB4;
+                border-radius: 2rem;
+                position: relative;
+                &::after{
+                    content: '';
+                    width: 8rem;
+                    height: 8rem;
+                    display: inline-block;
+                    background: url('../../images/icon/ico_call.svg') center center / 100% 100% no-repeat;
+                    position: absolute;
+                    top: 2rem;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+                > em{
+                    width: 100%;
+                    text-align: center;
+                    font-size: 3.2rem;
+                    font-weight: 600;
+                    display: inline-block;
+                    color: #fff;
+                    position: absolute;
+                    bottom: 3rem;
+                    left: 0;
+                    > p{
+                        font-size: 1.8rem;
+                        color: #fff;
+                    }                    
+                }
+            }
+            .kakao{
+                width: calc(50% - 2rem);
+                height: 20rem;
+                background-color: #fae100;
+                border-radius: 2rem;
+                position: relative;
+                &::after{
+                    content: '';
+                    width: 12rem;
+                    height: 12rem;
+                    display: inline-block;
+                    background: url('../../images/icon/ico_kakao_logo.png') center center / 100% 100% no-repeat;
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+                > em{
+                    width: 100%;
+                    text-align: center;
+                    font-size: 3.2rem;
+                    font-weight: 700;
+                    display: inline-block;
+                    color: #371d12;
+                    position: absolute;
+                    bottom: 3rem;
+                    left: 0;
+                    > p{
+                        font-size: 1.8rem;
+                        color: #371d12;
+                    }
+                }                
+            }               
+        }   
+        .price{
+            margin-top: 10rem;
+            em.txt-s{
+                width: 100%;
+                display: inline-block;
+                font-size: 1.6rem;
+                text-align: right;
+                color: #666;
+                margin-top: 1rem;
+            }
+        }  
+    }
+}

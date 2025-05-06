@@ -1,0 +1,72 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/variables" as mix;
+body{
+    &.dark-mode{
+        .footer{
+            background-color: #000;
+            border-top: 1px solid #333;
+            &__link{
+                .list{
+                    &::after{
+                        background-color: rgba(204, 204, 204, 0.2);
+                    }
+                }
+                .item{
+                    color: var.$color-white;
+                    & + .item{
+                        &::after{
+                            background-color: rgba(255, 255, 255, 0.2);
+                        }
+                    }
+                }
+            }
+            dl.item{
+                color: #888;
+                & + .item{
+                    &::after{
+                        background-color: rgba(204, 204, 204, 0.2);
+                    }
+                }
+                dt{
+                    &::after{
+                        color: #888;
+                    }
+                }
+            }
+            &__copy{
+                color: #888;
+            }
+            &__copy-small{
+                color: #666;
+            }
+            &__banner{
+                background-color: #1A1A1A;
+                .tel{
+                    color: var.$color-white;
+                    &::before{
+                        background: url('../images/icon/ico_call.svg') 0 0 no-repeat;
+                    }
+                }
+                .remote{
+                    background-color: #2D2D2D;
+                    color: var.$color-white;
+                    &::before{
+                        background: url('../images/icon/ico_remote.svg') 0 0 / 100% 100% no-repeat;
+
+                    }
+                }
+                .bn-odd{
+                    > span{
+                        color: rgba(204, 204, 204, 0.6);
+                    }
+                }
+                &.isms_p{
+                    &::before{
+                        background: none;
+                        @include mix.svg('../images/icon/ico_ismsp_mark.svg', 5rem, 3.7rem, #fff);
+                    }
+                }
+            }
+        }
+    }
+}

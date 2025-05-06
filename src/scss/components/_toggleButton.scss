@@ -1,0 +1,47 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/variables" as mix;
+
+.toggle-box{
+    display: inline-block;
+    margin: 10px;
+    .toggle{
+        position: relative;
+        display: inline-block;
+        width: 7.6rem;
+        height: 3.6rem;
+        background-color: #7c7c7c;
+        border-radius: 5rem;
+        cursor: pointer;
+        input{
+            display: none;
+            &:checked{
+                & + .toggle-slider{
+                    &::before{
+                        left: 1.1rem;
+                    transform: translateX(30px);
+                    }
+                }
+            }
+        }
+        .toggle-slider{
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transition: 0.4s;
+            &::before{
+                position: absolute;
+                content: "";
+                height: 2.8rem;
+                width: 2.8rem;
+                left: 0.6rem;
+                bottom: 0.4rem;
+                background-color: white;
+                transition: 0.4s;
+                border-radius: 50%;
+            }
+        }
+    }
+}

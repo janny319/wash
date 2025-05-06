@@ -1,0 +1,167 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/variables" as mix;
+
+.lnb-wrap{
+    position: relative;
+    border-left: 1px solid #eee;
+    background-color: #fff;
+    display: none;
+    &.lnb-login{
+        display: block;
+    }
+    @include mix.respond-to(terminal){
+        width: 100%;
+        height: 7rem;
+        border-top: 1px solid #EEE;
+        box-shadow: 0px -6px 12px 0px rgba(96, 108, 128, 0.06);
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 50;
+    }
+}
+.lnb{
+    width: 8rem;
+    height: calc(100vh - 8rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 6;
+    padding: 2.4rem 1.6rem;
+    position: sticky;
+    top: 8rem;
+    left: 0;
+    .lnb-top{
+        width: 100%;
+        &__list{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        &__item{
+            > button{
+                width: 100%;
+                @include mix.txt-cap1;
+                font-weight: 400;
+                color: #999;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                &::before{
+                    content: '';
+                    width: 2.4rem;
+                    height: 2.4rem;
+                    display: inline-block;
+                    margin-bottom: 0.8rem;
+                    @include mix.svg('', 2.4rem, 2.4rem, #aaa)
+                }
+                &.active{
+                    color: #4E60FF;
+                    font-weight: 600;
+                    &::before{
+                        background-color: #4E60FF;
+                    }
+                }
+            }
+            &:nth-of-type(1){
+                > button{
+                    &::before{
+                        mask-image: url('../images/icon/ico_lnb_analysis.svg');
+                    }
+                }
+            }
+            &:nth-of-type(2){
+                > button{
+                    &::before{
+                        mask-image: url('../images/icon/ico_lnb_drawer.svg');
+                    }
+                }
+            }
+            &:nth-of-type(3){
+                > button{
+                    &::before{
+                        mask-image: url('../images/icon/ico_lnb_review.svg');
+                    }
+                }
+            }
+            &:nth-of-type(4){
+                > button{
+                    &::before{
+                        mask-image: url('../images/icon/ico_lnb_profile.svg');
+                    }
+                }
+            }
+            & + li{
+                margin-top: 3.6rem;
+            }
+        }
+    }
+    .lnb-bot{
+        width: 100%;
+        &__list{
+            width: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap:2.4rem;
+        }
+        &__item{
+            position: relative;
+            .ai-bot{
+                width: 4.4rem;
+                height: 4.4rem;
+                background: url('../images/icon/ico_ai_bot.svg') 0 0 / 100% 100% no-repeat;
+                display: block;
+                &__list{
+                    width: 4.8rem;
+                    height: auto;
+                    position: absolute;
+                    bottom: 100%;
+                    left: 0;
+                    margin-bottom: 1.6rem;
+                    display: none;
+                }
+                &__item{
+                    > button{
+                        width: 4.8rem;
+                        height: 4.8rem;
+                        border-radius: 50%;
+                        background: #eee;
+                    }
+                    & + li{
+                        margin-top: 0.8rem;
+                    }
+                }
+            }
+            .go-top{
+                width: 4.4rem;
+                height: 4.4rem;
+                background: url('../images/icon/ico_go-top.svg') 0 0 / 100% 100% no-repeat;
+            }
+        }
+    }
+    @include mix.respond-to(terminal){
+        display: initial;
+        padding: 1.2rem 3.4rem;
+        .lnb-top{
+            &__list{
+                flex-direction: row;
+                justify-content: space-evenly;
+            }
+            &__item{
+                & + li{
+                    margin-top: 0;
+                }
+            }
+        }
+        .lnb-bot{
+            width: fit-content;
+            position: fixed;
+            bottom: 9rem;
+            right: 2.2rem;
+        }
+    }
+}

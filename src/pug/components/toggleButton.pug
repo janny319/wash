@@ -1,0 +1,6 @@
+mixin toggleButton(id, checked=false, className="")
+    .toggle-box
+        label.toggle(class=className for=id)
+            input(type="checkbox" id=id name=id checked=checked)
+            span.toggle-slider
+            span.toggle-ico

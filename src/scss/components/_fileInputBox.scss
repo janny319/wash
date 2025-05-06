@@ -1,0 +1,104 @@
+@use 'abstracts/variables' as var;
+@use 'abstracts/variables' as mix;
+
+.file-input-box{
+    width: auto;
+    position: relative;
+    .title{
+        width: 100%;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: -0.032rem;
+        margin-bottom: 1.2rem;
+        &.ess{
+            &::after{
+                content: '*';
+                font-size: 1.6rem;
+                font-weight: 500;
+                line-height: normal;
+                letter-spacing: -0.032rem;
+                color: #333;
+            }
+        }
+    }
+    .file-wrap{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        .file-input{
+            display: none;
+        }
+        .file-label{
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+        }
+        .file-name{
+            flex: 1;
+            height: 6rem;
+            line-height: 6rem;
+            padding: 0 1.6rem;
+            border: 1px solid #eee;
+            background-color: var.$color-white;
+            border-radius: 0.8rem;
+            overflow: hidden;
+            position: relative;
+            font-size: 16px;
+            color: #666;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .btn-select{
+            padding: 2rem;
+            font-size: 1.6rem;
+            background-color: #4E60FF;
+            color: #fff;
+            border: none;
+            border-radius: 0.8rem;
+            cursor: pointer;
+            margin-left: 1rem;
+            &:disabled{
+                background-color: #666;
+                color: #999;
+            }
+        }
+        .btn-delete{
+            width: 3rem;
+            height: 3rem;
+            position: absolute;
+            left: calc(100% - 15rem);
+            &::after{
+                content: '';
+                width: 1.8rem;
+                height: 1.8rem;
+                background: url('../images/icon/ico_input_clear.svg') 0 0 no-repeat;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+    @include mix.respond-to(mobile){
+        padding-bottom: 0;
+        .input-wrap{
+            display: flex;
+            input{
+                font-size: 1.5rem;
+            }
+        }
+    }
+    & + .input-box, & + .select-box, & + .textarea-box, & + .file-input-box{
+        margin-top: 2.4rem;
+    }
+}
+.file-info-txt{
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.024rem;
+    color: #999;
+}

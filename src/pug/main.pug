@@ -1,0 +1,60 @@
+extends ./layout/layout
+include ./layout/lnb.pug
+include ./components/layerPop.pug
+
+block content
+    .main
+        .main__visual
+            .img-wrap
+                img(src="../images/img/img_main_visual.jpg")
+            .txt-wrap
+                em 위생적이고 청결한 세탁 <br/>빠르고 정확한 배송<br/>
+                h2 세탁사랑
+        .main__cont 
+            .counsel
+                button(onclick="document.location.href='tel:1234-1234'").call 
+                    em 실시간 전화 상담
+                        p 매일 오전 09:00 ~ 17:00
+                button.kakao
+                    em 실시간 카톡 상담  
+                        p 카카오 친구찾기 [iu_1234] 검색해보세요 
+            .price
+                .table
+                    table
+                        thead 
+                            tr 
+                                th(colspan="2") 미용실
+                        tbody 
+                            tr 
+                                td 1자루
+                                td 300,000원 ~
+                            tr 
+                                td 한번접기
+                                td 서비스
+                            tr 
+                                td 2번접기
+                                td 30,000원 ~
+                .table                
+                    table
+                        thead 
+                            tr 
+                                th(colspan="2") 헬스장
+                        tbody 
+                            tr 
+                                td 1자루
+                                td 10,000원 ~
+                .table                
+                    table
+                        thead 
+                            tr 
+                                th(colspan="2") 마사지샵
+                        tbody 
+                            tr 
+                                td 1자루
+                                td 400,000원 ~                    
+                            tr 
+                                td(colspan="2") 오일 걱정 없이 삶아서 세탁합니다.(스팀건조기 보유)        
+                em.txt-s * vat 별도
+block bottomScripts
+    script.
+    link(rel="stylesheet", href="../css/pages/main.css")

@@ -1,0 +1,15 @@
+mixin modal({id, title, buttons=[], className})
+    .modalWrap(id=id class=className)
+        .dimd
+        .modal
+            button.modal--close(type="button")
+            .modal__inner
+                .modal__header
+                    h2= title
+                .modal__body
+                    block
+                //- 버튼 영역
+                if buttons.length > 0
+                    .modal__footer
+                        each button in buttons
+                            button(type="button", class=button.class, onclick=button.onclick)= button.text

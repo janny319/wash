@@ -1,0 +1,27 @@
+{
+	"name": "test",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"license": "Frameout",
+	"scripts": {
+		"dev": "gulp dev",
+		"build": "gulp build",
+		"deploy": "gh-pages -d dist -b deploy"
+	},
+	"dependencies": {
+		"gulp": "^5.0.0",
+		"gulp-autoprefixer": "^9.0.0",
+		"gulp-sourcemaps": "^2.6.5"
+	},
+	"devDependencies": {
+		"browser-sync": "^3.0.3",
+		"del": "^7.1.0",
+		"gh-pages": "^6.1.1",
+		"gulp-plumber": "^1.2.1",
+		"gulp-pug": "^5.0.0",
+		"gulp-sass": "^5.1.0",
+		"gulp-uglify": "^3.0.2",
+		"sass": "^1.79.3"
+	}
+}

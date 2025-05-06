@@ -1,0 +1,72 @@
+@use 'abstracts/variables' as var;
+@use 'abstracts/variables' as mix;
+
+.accordion {
+    width: 100%;
+    color: #fff;
+    &__item {
+        border-bottom: 1px solid var.$color-line_02;
+        &.is-active{
+            .accordion__head-btn{
+                color: var.$color-primary;
+                &::after{
+                    background: url('../images/icon/ico_minus.svg') 0 0 no-repeat;
+                }
+            }
+        }
+    }
+    &__head {
+        background-color: var.$color-white;
+    }
+    &__head-btn {
+        width: 100%;
+        font-size: 1.8rem;
+        font-weight: 600;
+        text-align: left;
+        @include mix.text-overflow;
+        padding: 1rem 2rem;
+        display: block;
+        position: relative;
+        &::after{
+            content: '';
+            width: 2.4rem;
+            height: 2.4rem;
+            display:inline-block;
+            background: url('../images/icon/ico_plus.svg') 0 0 no-repeat;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 4rem;
+        }
+    }
+    &__panel {
+        display: none;
+        padding: 1rem 2rem;
+        background-color: var.$color-diagram_04;
+        font-size: 1.5rem;
+        line-height: 3.2rem;
+        color: var.$color-text_02;
+        white-space: pre-line;
+        transition: max-height 0.3s ease-in-out;
+        text
+        &--active {
+            display: block;
+        }
+    }
+    @include mix.respond-to(mobile){
+        &__head-btn{
+            padding: 2rem 3.8rem 2rem 1rem;
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+            &::after{
+                right: 1rem;
+                top: 3.3rem;
+            }
+        }
+        &__panel{
+            padding: 2rem;
+            font-size: 1.5rem;
+            line-height: 2.5rem;
+        }
+    }
+}
