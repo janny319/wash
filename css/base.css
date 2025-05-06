@@ -1,0 +1,226 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+:root {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  cursor: default;
+  overflow-wrap: break-word;
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+}
+
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html {
+  font-size: 10px;
+}
+body {
+  font-family: "Pretendard", "-apple-system";
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: 0;
+  background: #fff;
+  color: #222;
+}
+
+li {
+  list-style: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+/* 추가 */
+input,
+textarea {
+  appearance: none;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  vertical-align: middle;
+  box-sizing: border-box;
+  color: #222;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: #000;
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  box-shadow: 0 0 0px 1000px #fff inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input:autofill,
+input:autofill:hover,
+input:autofill:focus,
+input:autofill:active {
+  -webkit-text-fill-color: #000;
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  box-shadow: 0 0 0px 1000px #fff inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input[type=password] {
+  font-size: 3.5rem;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+textarea {
+  resize: none;
+}
+
+input,
+textarea {
+  caret-color: #000;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  flex: 1;
+  border-radius: 0.8rem;
+  border: 1px solid #EEE;
+  font-size: 1.6rem;
+  padding: 2rem 3.2rem 2rem 1.6rem;
+  background: #fff url("../images/icon/ico_arr_down_gray.svg") no-repeat;
+  background-size: 1.8rem 1.8rem;
+  background-position: right 1.5rem top 50%;
+  cursor: pointer;
+  outline: none;
+}
+select:disabled {
+  background: #eee url("../images/icon/ico_arr_down_gray.svg") no-repeat;
+  background-size: 1.8rem 1.8rem;
+  background-position: right 1.5rem top 50%;
+  color: #999;
+}
+select option {
+  color: #333;
+}
+select option:disabled {
+  display: none;
+}
+select:required:invalid {
+  color: #999;
+  font-weight: 400;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: local("Pretendard Thin"), url("../font/Pretendard-Thin.woff") format("woff"), url("../font/Pretendard-Thin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local("Pretendard Light"), url("../font/Pretendard-Light.woff") format("woff"), url("../font/Pretendard-Light.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Pretendard Regular"), url("../font/Pretendard-Regular.woff") format("woff"), url("../font/Pretendard-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("Pretendard Medium"), url("../font/Pretendard-Medium.woff") format("woff"), url("../font/Pretendard-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: local("Pretendard SemiBold"), url("../font/Pretendard-SemiBold.woff") format("woff"), url("../font/Pretendard-SemiBold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: local("Pretendard Bold"), url("../font/Pretendard-Bold.woff") format("woff"), url("../font/Pretendard-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src: local("Pretendard Black"), url("../font/Pretendard-Black.woff") format("woff"), url("../font/Pretendard-Black.woff2") format("woff2");
+}
+@font-face {
+  font-family: "YetHangul";
+  font-style: normal;
+  font-weight: normal;
+  src: local("NanumBarunGothic-YetHangul"), url("../font/NanumBarunGothic-YetHangul.otf") format("opentype");
+}
+/*# sourceMappingURL=map/base.css.map */

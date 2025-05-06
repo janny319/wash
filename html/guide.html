@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가이드 페이지</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/layout_dark.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <script src="../js/libs/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="guide">
+      <div class="guide__element">
+        <h4>기본 작업 가이드</h4>
+        <div class="info-box">
+          <h4>해상도
+            <p>
+              - mobile : 720px 이하 <br/>
+              - tablet : 721px ~ 1023px 이하<br/>
+              - pc : 1024px ~ 1280px
+            </p>
+          </h4>
+        </div>
+        <div class="info-box">
+          <h4>크로스 브라우징
+            <p>
+              최신 버젼 기준으로 작업합니다.<br/>- ios : 18.1 <br/>
+              - aos : 14<br/>
+              - Google Chrome: 최신 버전 130 <br/>
+              - microsoft : Edge <br/>
+              - Safari : 18.1
+            </p>
+          </h4>
+        </div>
+        <div class="info-box">
+          <h4>웹표준 준수
+            <p>별도의 툴을 사용하지 않고 w3c에서 진행한 결과값으로 진행합니다. <br/><a href="https://validator.w3.org/" target="_blank">https://validator.w3.org/</a></p>
+          </h4>
+        </div>
+        <div class="info-box">
+          <h4>plugin
+            <p><a href="https://www.chartjs.org/" target="_blank">- chart.js</a></p>
+          </h4>
+        </div>
+      </div>
+      <div class="guide__element">
+        <h4>Tab style (link 유무에 따라 하단 영역 노출 제어 가능)</h4>
+            <div class="tab" data-js="tab">
+              <ul class="tab__btns">
+                <li class="tab__item" data-js="tab__btns" data-index="0">
+                  <button type="button">tab01</button>
+                </li>
+                <li class="tab__item" data-js="tab__btns" data-index="1">
+                  <button type="button">tab02</button>
+                </li>
+                <li class="tab__item" data-js="tab__btns" data-index="2">
+                  <button type="button">tab03</button>
+                </li>
+              </ul>
+              <div class="tab__panels">
+                <div class="tab__panels__box" data-index="0">
+                  <p>1번 탭 내용입니다.</p>
+                </div>
+                <div class="tab__panels__box" data-index="1">
+                  <p>2번 탭 내용입니다.</p>
+                </div>
+                <div class="tab__panels__box" data-index="2">
+                  <p>3번 탭 내용입니다.</p>
+                </div>
+              </div>
+            </div><br/>
+<br/>
+            <div class="tab" data-js="tab">
+              <ul class="tab__btns">
+                <li class="tab__item active"><a href="#">tab01</a></li>
+                <li class="tab__item"><a href="#">tab02</a></li>
+                <li class="tab__item"><a href="#">tab03</a></li>
+              </ul>
+              <!-- isLink가 true일 때는 패널을 렌더링하지 않음-->
+            </div>
+      </div>
+      <div class="guide__element">
+        <h4>Accordion style</h4>
+            <div class="accordian" data-js="accordion" data-uuid="acc">
+              <div class="accordion__item" data-index="0">
+                <div class="accordion__head">
+                  <button class="accordion__head-btn" type="button" data-js="accordion__btn">section 1</button>
+                </div>
+                <div class="accordion__panel" data-js="accordion__panel">1번 내용입니다.111</div>
+              </div>
+              <div class="accordion__item" data-index="1">
+                <div class="accordion__head">
+                  <button class="accordion__head-btn" type="button" data-js="accordion__btn">section 2</button>
+                </div>
+                <div class="accordion__panel" data-js="accordion__panel">2번 내용입니다.</div>
+              </div>
+              <div class="accordion__item" data-index="2">
+                <div class="accordion__head">
+                  <button class="accordion__head-btn" type="button" data-js="accordion__btn">section 3</button>
+                </div>
+                <div class="accordion__panel" data-js="accordion__panel">3번 내용입니다.</div>
+              </div>
+            </div>
+      </div>
+      <div class="guide__element">
+        <h4>dropDown</h4>
+            <div class="drop-down" style="width: 100%">
+              <div class="drop-down__select" data-js="select">선택된 항목 없음</div>
+              <ul class="drop-down__list" data-js="list">
+                <li class="drop-down__item" data-value="0" data-js="item">옵션 1</li>
+                <li class="drop-down__item" data-value="1" data-js="item">옵션 2</li>
+                <li class="drop-down__item" data-value="2" data-js="item">옵션 3</li>
+              </ul><span class="errMsg">항목을 선택해 주세요.</span>
+            </div>
+      </div>
+      <div class="guide__element">
+        <h4>select (기본 select)</h4>
+            <select name="projectStatus" required>
+              <!-- placeholder가 없을 경우, 첫 번째 option으로 placeholder 추가-->
+              <option class="placeholder" value="" selected disabled>선택</option>
+              <option value="requirement">요구사항분석</option>
+              <option value="ia">IA</option>
+              <option value="ui-ux">UI, UX 설계</option>
+              <option value="design">디자인시안</option>
+            </select>
+      </div>
+      <div class="guide__element">
+        <h4>inputBox</h4>
+            <div class="input-basic row" style="width: 100%">
+              <div class="title ess">test</div>
+              <div class="input-wrap">
+                <div class="input-wrap__input">
+                  <input class="input-field" value="" type="text" placeholder="제목이 있는 input type 입니다." maxlength="10">
+                  <button class="btn-clear" type="button" style="display: none;"></button>
+                  <div class="char-count"><span class="current-count">0</span>/<span class="max-count">10</span></div>
+                </div><em class="unit">자</em>
+              </div>
+              <p class="errMsg">회사명을 입력해 주세요.</p>
+            </div>
+            <div class="input-basic" style="width: 100%">
+              <div class="input-wrap">
+                <div class="input-wrap__input">
+                  <input class="input-field" value="" type="text" placeholder="제목이 없는 기본 input type 입니다." maxlength="10">
+                  <button class="btn-clear" type="button" style="display: none;"></button>
+                </div>
+              </div>
+              <p class="errMsg">회사명을 입력해 주세요.</p>
+            </div>
+      </div>
+      <div class="guide__element">
+        <h4>파일첨부</h4>
+            <div class="file-input-box" style="width: 100%">
+              <div class="title">
+              </div>
+              <div class="file-wrap">
+                <input class="file-input" type="file" id="fileInput-" style="display:none"><span class="file-name" id="file-name-">선택된 파일이 없음</span>
+                <button class="btn-delete" type="button" style="display:none;" id="delete-btn-"></button>
+                <button class="btn-select" type="button" onclick="$('#fileInput-').click()">파일 선택</button>
+              </div><span class="errMsg"></span>
+            </div>
+      </div>
+      <div class="guide__element">
+        <h4>textarea</h4>
+            <div class="textarea row" style="width: 100%;">
+              <div class="title ess">내용
+              </div>
+              <div class="text-wrap" style="height: 200px;">
+                <textarea class="textarea-field" maxlength="200" placeholder="제목이 있는 textarea" data-maxlength="200"></textarea>
+                <div class="char-count"><span class="current-count">0</span>/<span class="max-count">200</span></div>
+              </div>
+            </div>
+            <div class="textarea" style="width: 100%">
+              <div class="text-wrap" style="height: 200px;">
+                <textarea name="" maxlength="200" placeholder="기본 textarea"></textarea>
+              </div><span class="errMsg">내용을 입력해 주세요.</span>
+            </div>
+      </div>
+      <div class="guide__element">
+        <h4>paging</h4>
+            <div class="paging">
+              <button class="paging__prev" disabled aria-label="Previous Page"></button>
+              <ul class="paging__list">
+                <li class="paging__item">
+                  <button class="active" aria-label="Page 1">1</button>
+                </li>
+                <li class="paging__item">
+                  <button aria-label="Page 2">2</button>
+                </li>
+                <li class="paging__item">
+                  <button aria-label="Page 3">3</button>
+                </li>
+                <li class="paging__item">
+                  <button aria-label="Page 4">4</button>
+                </li>
+                <li class="paging__item">
+                  <button aria-label="Page 5">5</button>
+                </li>
+              </ul>
+              <button class="paging__next" aria-label="Next Page"></button>
+            </div>
+      </div>
+      <div class="guide__element">
+        <h4>table</h4>
+        <div class="table-cont">
+          <div class="table">
+            <table>
+              <colgroup>
+                <col width="5%">
+                <col width="20%">
+                <col width="15%">
+                <col width="15%">
+                <col width="15%">
+                <col width="15%">
+                <col width="15%">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>no.</th>
+                  <th>부서명</th>
+                  <th>역할식별자</th>
+                  <th>역할명</th>
+                  <th>시작일자</th>
+                  <th>종료일자</th>
+                  <th>추가 XP</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>특별부서</td>
+                  <td>식별자1</td>
+                  <td>중요한 역할</td>
+                  <td>yyyy-mm-dd</td>
+                  <td>yyyy-mm-dd</td>
+                  <td>추가</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="guide__element">
+        <h4>page Title</h4>
+            <div class="page-title">
+              <h3>페이지명</h3>
+              <div class="nav">
+                <ol class="nav__list">
+                  <li class="nav__item">1 뎁스 메뉴</li>
+                  <li class="nav__item">2뎁스 메뉴</li>
+                  <li class="nav__item">3뎁스 메뉴</li>
+                  <li class="nav__item">4뎁스 메뉴</li>
+                  <li class="nav__item"></li>
+                </ol>
+              </div>
+            </div>
+      </div>
+      <div class="guide__element">
+        <h4>modal popup</h4>
+        <button type="button" onclick="exampleModal.open()">Open Modal</button>
+            <div class="modalWrap" id="exampleModal">
+              <div class="dimd"></div>
+              <div class="modal">
+                <button class="modal--close" type="button"></button>
+                <div class="modal__inner">
+                  <div class="modal__header">
+                    <h2>예제 모달</h2>
+                  </div>
+                  <div class="modal__body">
+                    <p>모달입니다.</p>
+                  </div>
+                  <div class="modal__footer">
+                    <button class="btn-confirm" type="button" onclick="confirmAction()">확인</button>
+                    <button class="btn-cancel" type="button">취소</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </div>
+      <div class="guide__element">
+        <h4>Alert</h4>
+        <button type="button" onclick="exampleAlert.open()">Open Alert</button>
+            <div class="popWrap" id="exampleAlert">
+              <div class="dimd"></div>
+              <div class="alert">
+                <div class="alert__inner">
+                  <div class="alert__header">
+                    <h2 class="alert__tit">예제 얼럿</h2>
+                  </div>
+                  <div class="alert__body">
+                    <p class="alert__message">정말 삭제하시겠습니까?</p>
+                  </div>
+                  <div class="alert__footer">
+                    <button class="btn-confirm" type="button" onclick="confirmAction()">확인</button>
+                    <button class="btn-cancel" type="button">취소</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </div>
+      <div class="guide__element">
+        <h4>공지팝업</h4>
+        <button type="button" onclick="exampleNotice.open()">Open Notice</button>
+            <div class="modalWrap" id="exampleNotice">
+              <div class="dimd"></div>
+              <div class="layer-pop">
+                <div class="layer-pop__cont"><img src="/images/temp/img_high_open_notice.png" alt="팝업 이미지"></div>
+                <div class="layer-pop__btn">
+                  <button class="close-day">하루 동안 열지 않기</button>
+                  <button class="close">닫기</button>
+                </div>
+              </div>
+            </div>
+      </div>
+      <div class="guide__element">
+        <h4>Toggle Button</h4>
+            <div class="toggle-box">
+              <label class="toggle" for="toggle3">
+                <input type="checkbox" id="toggle3" name="toggle3" checked><span class="toggle-slider"></span><span class="toggle-ico"></span>
+              </label>
+            </div>
+            <div class="toggle-box">
+              <label class="toggle theme" for="toggle4">
+                <input type="checkbox" id="toggle4" name="toggle4" checked><span class="toggle-slider"></span><span class="toggle-ico"></span>
+              </label>
+            </div>
+      </div>
+      <div class="guide__element">
+        <h4>Check-box</h4>
+            <div class="input-checkbox">
+              <input type="checkbox" id="exampleCheck">
+              <label for="exampleCheck">test</label>
+            </div>
+      </div>
+      <div class="guide__element">
+        <h4>Radio-box</h4>
+            <div class="input-radio">
+              <input class="input-radio__field" type="radio" name="test01" id="test01">
+              <label class="input-radio__label" for="test01">test01</label>
+            </div>
+      </div>
+      <div class="guide__element">
+        <h4>Stop Watch</h4>
+            <div class="stop-watch">
+              <div class="display">00:00:00</div>
+              <button class="start-btn">시작</button>
+              <button class="pause-btn">일시정지</button>
+              <button class="reset-btn">초기화</button>
+            </div>
+      </div>
+    </div>
+    <!-- 상단으로 버튼-->
+    <button class="go-top"><img src="/images/icon/ico_go-top.svg" alt="상단으로 이동"></button>
+  </body>
+  <script src="../js/pubScript.js"></script>
+  <script src="../js/common.js"></script>
+  <script>
+    //tab
+    const tab = new Tab('.tab');
+    //accordion
+    const acc = new Accordion('[data-uuid="acc"]', {
+    	type: 'multiple', // 'single' 또는 'multiple'
+    	animationMode: true, // 애니메이션 사용 여부
+    	defaultActiveIndices: [0], // 기본 활성화된 패널 인덱스
+    });
+    
+    //popup
+    const exampleModal = new Popup('exampleModal');
+    const exampleAlert = new Popup('exampleAlert');
+    const exampleNotice = new Popup('exampleNotice');
+  </script>
+</html>

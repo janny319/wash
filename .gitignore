@@ -1,0 +1,45 @@
+# 빌드된 파일 무시
+dist/
+
+# Logs
+logs/
+*.log
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+
+# Build 폴더 무시
+src/mid/css/
+src/mid/html/
+src/high/css/
+src/high/html/
+
+# 환경 설정
+.env
+
+# OS 관련 파일
+.DS_Store
+Thumbs.db
+
+# 편집기 관련 설정 파일
+.idea/
+.vscode/
+
+# 캐시 파일
+*.cache
+*.tmp
+src/gate/css/style.css
+src/gate/css/style.css
+src/gate/css/style.css
+src/gate/html/gate.html
+src/gate/css/style.css
+src/gate/css/map/style.css.map
+src/gate/css/map/style.css.map
+src/gate/html/gate.html
+src/gate/css/map/style.css.map
+src/gate/html/gate.html
+src/gate/html/gate.html
+src/gate/css/map/style.css.map
+src/gate/css/style.css
