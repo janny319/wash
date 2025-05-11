@@ -210,7 +210,7 @@ class MobileGnbMenu {
     }
 }
 
-// new MobileGnbMenu();
+new MobileGnbMenu();
 
 
 // // accordion

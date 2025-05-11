@@ -1,6 +1,11 @@
 .pages {
   width: 100%;
 }
+@media (min-width: 240px) and (max-width: 1024px) {
+  .pages {
+    padding-top: 6rem;
+  }
+}
 .pages__visual {
   position: relative;
   height: 50rem;
@@ -47,10 +52,40 @@
   display: inline-block;
   color: #08298A;
 }
+@media (min-width: 240px) and (max-width: 1024px) {
+  .pages__visual {
+    width: 100%;
+    height: 25rem;
+  }
+  .pages__visual .img-wrap {
+    height: 25rem;
+  }
+  .pages__visual .txt-wrap {
+    top: 10rem;
+  }
+  .pages__visual .txt-wrap h2 {
+    font-size: 6rem;
+  }
+  .pages__visual .txt-wrap > em {
+    font-size: 2.2rem;
+    line-height: 2.8rem;
+  }
+}
+@media (max-width: 720px) {
+  .pages__visual .txt-wrap {
+    left: 3rem;
+  }
+}
 .pages__cont {
-  width: 98rem;
+  width: 100%;
+  max-width: 98rem;
   margin: 0 auto;
   padding: 12rem 0;
+}
+@media (max-width: 720px) {
+  .pages__cont {
+    padding: 6rem 2rem;
+  }
 }
 .pages__cont > strong {
   font-size: 4rem;
@@ -84,5 +119,12 @@
   text-align: right;
   color: #666;
   margin-top: 1rem;
+}
+.pages__cont .price .txt-sub {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #045FB4;
+  text-align: center;
+  padding: 3rem 0;
 }
 /*# sourceMappingURL=../map/pages/pages.css.map */
