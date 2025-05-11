@@ -172,6 +172,7 @@
 .main__cont .counsel .instar > i {
   width: 10rem;
   height: 10rem;
+  display: inline-block;
 }
 .main__cont .counsel .instar > i > img {
   width: 100%;
