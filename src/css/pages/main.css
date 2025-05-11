@@ -92,6 +92,7 @@
 .main__cont .counsel {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
@@ -160,6 +161,31 @@
 .main__cont .counsel .kakao > em > p {
   font-size: 1.8rem;
   color: #371d12;
+}
+.main__cont .counsel .instar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+}
+.main__cont .counsel .instar > i {
+  width: 10rem;
+  height: 10rem;
+}
+.main__cont .counsel .instar > i > img {
+  width: 100%;
+}
+.main__cont .counsel .instar > em {
+  margin-left: 2.4rem;
+  font-weight: 500;
+  font-size: 2rem;
+  text-align: left;
+}
+.main__cont .counsel .instar > em strong {
+  font-size: 3rem;
+  font-weight: 600;
+  display: inline-block;
 }
 @media (max-width: 720px) {
   .main__cont .counsel {

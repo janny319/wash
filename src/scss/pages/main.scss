@@ -88,6 +88,7 @@
         .counsel{
             width: 100%;
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
             .call{
@@ -156,6 +157,31 @@
                     }
                 }                
             } 
+            .instar{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 3rem;
+                > i{
+                    width: 10rem;
+                    height: 10rem;
+                    > img{
+                        width: 100%;
+                    }
+                }
+                > em{
+                    margin-left: 2.4rem;
+                    font-weight: 500;
+                    font-size: 2rem;
+                    text-align: left;
+                    strong{
+                        font-size: 3rem;
+                        font-weight: 600;
+                        display: inline-block;
+                    }
+                }
+            }
             @include mix.respond-to(mobile){
                 flex-direction: column;
                 .call{
