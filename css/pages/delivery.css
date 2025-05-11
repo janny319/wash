@@ -125,4 +125,15 @@
 .pages__cont .delivery .list-txt + span {
   margin-top: 1rem;
 }
+@media (max-width: 720px) {
+  .pages__cont .delivery::before {
+    background-size: 100%;
+  }
+  .pages__cont .delivery .tit-txt {
+    font-size: 3.5rem;
+  }
+  .pages__cont .delivery .list-txt {
+    font-size: 3rem;
+  }
+}
 /*# sourceMappingURL=../map/pages/delivery.css.map */
