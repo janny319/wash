@@ -64,7 +64,7 @@
     top: 10rem;
   }
   .main__visual .txt-wrap h2 {
-    font-size: 5rem;
+    font-size: 4rem;
     padding-left: 1rem;
   }
   .main__visual .txt-wrap > em {
@@ -75,7 +75,7 @@
 }
 @media (max-width: 720px) {
   .main__visual .txt-wrap {
-    left: 3rem;
+    left: 1rem;
   }
 }
 .main__cont {
