@@ -1350,7 +1350,7 @@ text .accordion__panel--active {
 }
 @media (max-width: 720px) {
   .table {
-    padding: 0 2rem;
+    padding: 0;
   }
 }
 .table + .paging {
