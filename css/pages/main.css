@@ -169,6 +169,13 @@
   justify-content: center;
   margin-top: 3rem;
 }
+.main__cont .counsel .instar::before {
+  content: "";
+  width: 10rem;
+  height: 10rem;
+  display: inline-block;
+  background: url("../../images/icon/ico_instargram.png") 0 0/100% auto no-repeat;
+}
 .main__cont .counsel .instar > i {
   width: 10rem;
   height: 10rem;
