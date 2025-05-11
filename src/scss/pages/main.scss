@@ -59,9 +59,9 @@
                 height: 25rem;
             }
             .txt-wrap{
-                top: 10rem;
+                top: 10rem;                
                 h2{
-                    font-size: 5rem;
+                    font-size: 4rem;
                     padding-left: 1rem;
                 }
                 > em{
@@ -73,7 +73,7 @@
         }   
         @include mix.respond-to(mobile){
             .txt-wrap{
-                left: 3rem;
+                left: 1rem;
             }
         }            
     }
