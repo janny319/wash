@@ -120,6 +120,17 @@
                     margin-top: 1rem;
                 }
             }
+            @include mix.respond-to(mobile){
+                &::before{
+                    background-size: 100%;
+                }
+                .tit-txt{
+                    font-size: 3.5rem;
+                }
+                .list-txt{
+                    font-size: 3rem;
+                }
+            }
         }
     }
 }
