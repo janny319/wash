@@ -3,7 +3,6 @@
 
 .wrap{
     width: 100%;
-    min-width: 128rem;
     position: relative;
     .container{
         width: 100%;
@@ -46,54 +45,6 @@
             &::before {
                 border:0;
                 background-image:url('../images/icon/ico_checkbox_on.svg');
-            }
-        }
-    }
-    &.lnb-login{
-        .header{
-            .header__box{
-                max-width: 136.1rem;
-            }
-        }
-        .container{
-            display:flex;
-            .dashboard-wrap,
-            .profile-wrap,
-            .onestop,
-            .voca-wrap,
-            .classic-wrap{
-                width: calc(100% - 8.1rem);
-            }
-            .lnb-wrap{
-                display: block;
-            }
-        }
-        .footer{
-            &__link{
-                .list{
-                    max-width: 136.1rem;
-                }
-            }
-            &__inner{
-                max-width: 136.1rem;
-            }
-        }
-        @include mix.respond-to(terminal){
-            .header {
-                padding:0;
-            }
-            .container{
-                display: initial;
-                .dashboard-wrap,
-                .onestop,
-                .profile-wrap,
-                .voca-wrap,
-                .classic-wrap{
-                    width: 100%;
-                }
-            }
-            .footer{
-                padding-bottom: 7rem;
             }
         }
     }

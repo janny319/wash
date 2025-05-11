@@ -4,6 +4,9 @@
 
 .main{
     width: 100%;
+    @include mix.respond-to(terminal){
+        padding-top: 6rem;
+    }
     &__visual{
         position: relative;
         height: 50rem;
@@ -48,12 +51,38 @@
                 display: inline-block;
                 color: #08298A;
             }            
-        }        
+        }
+        @include mix.respond-to(terminal){
+            width: 100%;
+            height: 25rem;
+            .img-wrap{
+                height: 25rem;
+            }
+            .txt-wrap{
+                top: 10rem;
+                h2{
+                    font-size: 6rem;
+                }
+                > em{
+                    font-size: 2.2rem;
+                    line-height: 2.8rem;;
+                }
+            }
+        }   
+        @include mix.respond-to(mobile){
+            .txt-wrap{
+                left: 3rem;
+            }
+        }            
     }
     &__cont{
-        width: 98rem;
+        width: 100%;
+        max-width: 98rem;
         margin: 0 auto;
         padding: 12rem 0;
+        @include mix.respond-to(mobile){
+            padding: 6rem 2rem;
+        }
         .counsel{
             width: 100%;
             display: flex;
@@ -124,7 +153,17 @@
                         color: #371d12;
                     }
                 }                
-            }               
+            } 
+            @include mix.respond-to(mobile){
+                flex-direction: column;
+                .call{
+                    width: 100%;
+                }
+                .kakao{
+                    width: 100%;
+                    margin-top: 3rem;
+                }
+            }              
         }   
         .price{
             margin-top: 10rem;
@@ -135,6 +174,13 @@
                 text-align: right;
                 color: #666;
                 margin-top: 1rem;
+            }
+            .txt-sub{
+                font-size: 2.4rem;
+                font-weight: 600;
+                color: #045FB4;
+                text-align: center;
+                padding: 3rem 0;
             }
         }  
     }

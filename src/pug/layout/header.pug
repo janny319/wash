@@ -12,22 +12,18 @@ header.header
 header.header-mo
     .header-mo__box
         h1.header-mo__logo
-            a(href="#none")
+            a(href="/html/main.html") 세탁사랑해
         button.menu-open
     .mo-gnb
         .mo-gnb__top
-            +toggleButton("toggle2", false, "theme")
             button.close
-        // 로그아웃 시
-        .mo-gnb__user
-            p AI 단추를 통해<br/>맞춤 학습을 시작해 보세요.
-            button.login 로그인 / 회원가입
-        // 로그인 시
-            <div class="mo-gnb__user">
-                <p><em>이*한</em> 님! <br/>학습을 시작해 볼까요?</p>
-            </div>
         .mo-gnb__wrap
             ul.gnb
-                // 메뉴 목록은 GnbMenu 동적으로 추가
-        // 로그인 시
-            <button class="login">로그아웃</button>
+                li.gnb__item 
+                    a(href="/html/company.html") 회사소개
+                li.gnb__item 
+                    a(href="/html/info.html") 세탁안내
+                li.gnb__item 
+                    a(href="/html/delivery.html") 배송안내
+                li.gnb__item 
+                    a(href="/html/price.html") 가격안내                                                            

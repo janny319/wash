@@ -4,6 +4,9 @@
 
 .pages{
     width: 100%;
+    @include mix.respond-to(terminal){
+        padding-top: 6rem;
+    }    
     &__visual{
         position: relative;
         height: 50rem;
@@ -48,33 +51,71 @@
                 display: inline-block;
                 color: #08298A;
             }            
-        }        
+        }  
+        @include mix.respond-to(terminal){
+            width: 100%;
+            height: 25rem;
+            .img-wrap{
+                height: 25rem;
+            }
+            .txt-wrap{
+                top: 10rem;
+                h2{
+                    font-size: 6rem;
+                }
+                > em{
+                    font-size: 2.2rem;
+                    line-height: 2.8rem;;
+                }
+            }
+        }  
+        @include mix.respond-to(mobile){
+            .txt-wrap{
+                left: 3rem;
+            }
+        }
     }
     &__cont{
-        width: 98rem;
+        width: 100%;
+        max-width: 98rem;
         margin: 0 auto;
         padding: 12rem 0;
-        .wash-info{
+        @include mix.respond-to(mobile){
+            padding: 6rem 2rem;
+        }        
+        .delivery{
             width: 100%;
-            display: flex;
-            justify-content: space-between;
-            li{
-                width: calc(33% - 1rem);
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                border-radius: 2rem;
-                background: #efefef;
-                padding: 2rem;
-                > img{
-                    width: 10rem;                    
-                }
-                > p{
-                    font-size: 2rem;
-                    color: #222;
-                    font-weight: 500;
-                    padding-top: 3rem;
-                    text-align: center;
+            height: 30rem;
+            position: relative;
+            &::before{
+                content: '';
+                width: 100%;
+                height: 40rem;
+                display: inline-block;
+                background: url('../../images/img/ico_delivery.png') center center no-repeat;
+                background-size: 40rem;
+                position: absolute;
+                top: 55%;
+                left: 50%;
+                transform: translate(-50% , -50%);
+                opacity: 0.05;
+            }
+            .tit-txt{
+                font-size: 4.5rem;
+                font-weight: 600;
+                color: #111;
+                margin-bottom: 2rem;
+                text-align: center;
+            }
+            .list-txt{
+                width: 100%;
+                font-size: 3.8rem;
+                font-weight: 500;
+                color: #333;
+                display: inline-block;
+                text-align: center;
+                & + span{
+                    margin-top: 1rem;
                 }
             }
         }

@@ -4,6 +4,9 @@
 
 .pages{
     width: 100%;
+    @include mix.respond-to(terminal){
+        padding-top: 6rem;
+    }    
     &__visual{
         position: relative;
         height: 50rem;
@@ -48,12 +51,38 @@
                 display: inline-block;
                 color: #08298A;
             }            
-        }        
+        }  
+        @include mix.respond-to(terminal){
+            width: 100%;
+            height: 25rem;
+            .img-wrap{
+                height: 25rem;
+            }
+            .txt-wrap{
+                top: 10rem;
+                h2{
+                    font-size: 6rem;
+                }
+                > em{
+                    font-size: 2.2rem;
+                    line-height: 2.8rem;;
+                }
+            }
+        }    
+        @include mix.respond-to(mobile){
+            .txt-wrap{
+                left: 3rem;
+            }
+        }                    
     }
     &__cont{
-        width: 98rem;
+        width: 100%;
+        max-width: 98rem;
         margin: 0 auto;
         padding: 12rem 0;
+        @include mix.respond-to(terminal){
+            padding: 6rem 2rem;
+        }        
         .wash-info{
             width: 100%;
             display: flex;
@@ -75,6 +104,15 @@
                     font-weight: 500;
                     padding-top: 3rem;
                     text-align: center;
+                }
+            }
+            @include mix.respond-to(terminal){
+                flex-direction: column;
+                li{
+                    width: 100%;
+                    & + li{
+                        margin-top: 3rem;
+                    }
                 }
             }
         }

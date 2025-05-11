@@ -4,18 +4,20 @@ include ./components/layerPop.pug
 
 block content
     .pages
-        .pages__visual.info
+        .pages__visual.delivery
             .img-wrap
                 img(src="../images/img/img_main_visual.jpg")
             .txt-wrap
                 em 위생적이고 청결한 세탁 <br/>빠르고 정확한 배송<br/>
                 h2 세탁사랑
         .pages__cont 
-            ul.wash-info 
-                li 
-                    p 배송지역 안내
-
+            .delivery
+                h3.tit-txt ** 배송지역 안내 **
+                span.list-txt [ 서울 강북 전지역 ]
+                span.list-txt [ 서울 강남구 전지역 ]
+                span.list-txt [ 서울 서초구 전지역 ]
+                span.list-txt [ 서울 송파구 전지역 ]
 
 block bottomScripts
     script.
-    link(rel="stylesheet", href="../css/pages/info.css")
+    link(rel="stylesheet", href="../css/pages/delivery.css")

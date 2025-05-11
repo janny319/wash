@@ -1205,11 +1205,9 @@ text .accordion__panel--active {
 
 .table {
   width: 100%;
-  overflow-y: auto;
 }
 .table table {
   width: 100%;
-  min-width: 90rem;
   table-layout: fixed;
 }
 .table table thead tr th {
