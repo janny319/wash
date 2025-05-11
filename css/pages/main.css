@@ -64,11 +64,13 @@
     top: 10rem;
   }
   .main__visual .txt-wrap h2 {
-    font-size: 6rem;
+    font-size: 5rem;
+    padding-left: 1rem;
   }
   .main__visual .txt-wrap > em {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     line-height: 2.8rem;
+    text-align: right;
   }
 }
 @media (max-width: 720px) {
